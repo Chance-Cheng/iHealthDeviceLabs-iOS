@@ -24,6 +24,7 @@ iHealth Bg5
 2、Frameworks
 
 
+
 3、Configuration
 Add 2 new Item in ‘Supported external accessory protocols’: com.jiuan.BPV20, com.jiuan.P930, com.jiuan.BPV21￼C.￼￼￼Add 1 new Item in ‘Required background modes’: App communicates with an accessory、 App communicates using CoreBluetooth
 ### How to use the iHealth SDK
