@@ -158,7 +158,7 @@ PO3Controller:
 ``` BG5 *bg5=[[controller getAllCurrentBG5Instace] objectAtIndex:i];```
 b)  Use amInstance to call bg5 related communication methods.## API Guide
 
-[Click this link]()
+[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/tree/master/api-docs)
 
 ## Examples[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/tree/master/examples)
 ## Release Note
