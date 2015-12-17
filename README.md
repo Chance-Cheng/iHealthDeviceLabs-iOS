@@ -166,7 +166,7 @@ PO3Controller:
 [Click this link]()
 ## FAQ
 
-[Click this link]()
+[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/doc/FAQ.md)
 
 
 
