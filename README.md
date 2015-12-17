@@ -14,7 +14,6 @@ iHealth Hs4s
 iHealth Hs5
 iHealth Am3
 iHealth Am3s
-iHealth Am4
 iHealth Po3
 iHealth Bg1
 iHealth Bg5
@@ -140,29 +139,19 @@ AM3SController:
 True: Can connect to AM3S's. False: Stop connecting to other AM3S's.
 ##### 11. Operation procedure for PO3.a) Register plug-in device PO3 info:`PO3ConnectNoti`; 
 b) Initialize PO3 controller class:
-```PO3Controller *po3Controller$=$[PO3Controller$shareIHPO3Controller];```c)Access control class instance after receiving 
+```PO3Controller *po3Controller = [PO3Controller shareIHPO3Controller];```c)Access control class instance after receiving 
 PO3Controller:
 
 ```NSArray *po3Array = [po3Controller getAllCurrentPO3Instace];```
 
 ```PO3 *po3Instance =[po3Array objectAtIndex:i]```
 d) Use amInstance to call PO3 related communication methods.
-
-##### 12. Operation procedure for PO3.a) Register plug-in device PO3 info:`PO3ConnectNoti`; 
-b) Initialize PO3 controller class:
-```PO3Controller *po3Controller$=$[PO3Controller$shareIHPO3Controller];```c)Access control class instance after receiving 
-PO3Controller:
-
-```NSArray *po3Array = [po3Controller getAllCurrentPO3Instace];```
-
-```PO3 *po3Instance =[po3Array objectAtIndex:i]```
-d) Use amInstance to call PO3 related communication methods.
-##### 13. Operation procedure for BG1.
+##### 12. Operation procedure for BG1.
 a) Initialization for BG1 (connected BG via soundjack)
-```AudioBG1Communication*audioBG1Communication=[AudioBG1Communication audioCommunicationObject];```
+```AudioBG1Communication *audioBG1Communication=[AudioBG1Communication audioCommunicationObject];```
 b) Using ‘audioBG1Communication’ to call the communication module of the device
 
-##### 14. Operation procedure for BG5.
+##### 13. Operation procedure for BG5.
 a) Initialization for BG5 (wireless BG viaBluetooth)
 ```BG5Controller *controller=[BG5Controller shareIHBg5Controller];```
 ``` BG5 *bg5=[[controller getAllCurrentBG5Instace] objectAtIndex:i];```
