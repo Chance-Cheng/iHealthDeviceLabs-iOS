@@ -163,7 +163,7 @@ PO3Controller:
 ## Examples[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/tree/master/examples)
 ## Release Note
 
-[Click this link]()
+[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/doc/ReleaseNote.md)
 ## FAQ
 
 [Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/doc/FAQ.md)
