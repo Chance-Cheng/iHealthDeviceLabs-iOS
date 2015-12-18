@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>BG3 Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">ynote </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">youdao</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/serialNumber">serialNumber</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/commandCreateBG3TestModel:CodeString:UserID:clientID:clientSecret:Authentication:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:">- commandCreateBG3TestModel:CodeString:UserID:clientID:clientSecret:Authentication:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BG3 Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>BG3.h<br />BG3.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/serialNumber" title="serialNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serialNumber">&nbsp;&nbsp;serialNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>‘serialNumber’ is for separating different device when multiple device have been connected.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *serialNumber</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>‘serialNumber’ is for separating different device when multiple device have been connected.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandCreateBG3TestModel:CodeString:UserID:clientID:clientSecret:Authentication:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:" title="commandCreateBG3TestModel:CodeString:UserID:clientID:clientSecret:Authentication:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreateBG3TestModel:CodeString:UserID:clientID:clientSecret:Authentication:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateBG3TestModel:CodeString:UserID:clientID:clientSecret:Authentication:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start measure</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandCreateBG3TestModel:(BGMeasureMode)<em>testMode</em> CodeString:(NSString *)<em>encodeString</em> UserID:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(DisposeAuthenticationBlock)<em>disposeAuthenticationBlock</em> DisposeBGSendCodeBlock:(DisposeBGSendCodeBlock)<em>disposeBGSendCodeBlock</em> DisposeBGStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGBloodBlock:(DisposeBGBloodBlock)<em>disposeBGBloodBlock</em> DisposeBGResultBlock:(DisposeBGResultBlock)<em>disposeBGResultBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>testMode</code></th>
+						<td><p>The &lsquo;testMode&rsquo; send measurement mode, BGMeasureMode_Blood means blood measurement mode, BGMeasureMode_NoBlood means control solution measurement mode.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>encodeString</code></th>
+						<td><p>Get the code information by scanning the QR code.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userID</code></th>
+						<td><p>The only user label, is indicated by form of email address.
+@param clientID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>clientSecret</code></th>
+						<td><p>&lsquo;clientID&rsquo; and &lsquo;clientSecret&rsquo; are the only user label, will be achieved after the register of SDK application. Please contact louie@ihealthlabs.com for the registration.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
+						<td><p>This block returns results after  the verification of userID,clientID,clientSecret.
+Results:
+a)  UserAuthen_RegisterSuccess, new register successes.
+b)  UserAuthen_LoginSuccess, user logs in successfully.
+c)  UserAuthen_CombinedSuccess, user has been recognised as iHealth user, the measurement via SDK could be activated, the result data belongs to the user.
+d)  UserAuthen_TrySuccess, network error, the measurement is only for testing, SDK is not fully functional.
+e)  UserAuthen_InvalidateUserInfo, the verification of userID/clientID/clientSecret failed.
+f)  UserAuthen_SDKInvalidateRight, the application has not been authorised.
+g)  UserAuthen_UserInvalidateRight, the user has not been authorised.
+h)  UserAuthen_InternetError, network error, verification    failed.
+&ndash; PS:
+1. the measurement via SDK is functional in the case from a) to d).
+2. the measurement via SDK will be determined in the case from e) to h), please contact iHealth support team, louie@ihealthlabs.com
+3. “iHealth Disclaimer” will pop up and need to be proved by the user when SDK is activated for the first time.
+4. if iHealth SDK has been using without internet, there is only 10-day try out because the SDK can not be certified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGStripInBlock</code></th>
+						<td><p>The block returns yes means strip slides in.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGBloodBlock</code></th>
+						<td><p>The block returns yes means the blood drop has beed sensed from the strip</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>A block to return error codes.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>unitstate</code></th>
+						<td><p>BGUnit_mmolPL stands for mmol/L, BGUnit_mgPmL stands for mg/dL.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGResultBlock，The</code></th>
+						<td><p>block returns the measurement by the unit of mg/dL, range from 20-600.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Start measure</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 youdao. All rights reserved. Updated: 2015-12-18</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

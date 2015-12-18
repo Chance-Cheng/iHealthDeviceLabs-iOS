@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>PO3 Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">ynote </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">youdao</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/commandCreatePO3User:Authentication:DisposeResultBlock:DisposeErrorBlock:">- commandCreatePO3User:Authentication:DisposeResultBlock:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:">- commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandEndPO3CurrentConnect:DisposeErrorBlock:">- commandEndPO3CurrentConnect:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:">- commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:</option>
+		
+		<option value="//api/name/commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:">- commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandStartPO3MeasureData:Measure:FinishPO3MeasureData:DisposeErrorBlock:">- commandStartPO3MeasureData:Measure:FinishPO3MeasureData:DisposeErrorBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">PO3 Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>PO3.h<br />PO3.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/commandCreatePO3User:Authentication:DisposeResultBlock:DisposeErrorBlock:" title="commandCreatePO3User:Authentication:DisposeResultBlock:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreatePO3User:Authentication:DisposeResultBlock:DisposeErrorBlock:">&ndash;&nbsp;commandCreatePO3User:Authentication:DisposeResultBlock:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Restore Sync time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandCreatePO3User:(User *)<em>tempUser</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> DisposeResultBlock:(DisposeSynchronousTimeFinishBlock)<em>disposeSynchronousTimeFinishBlock</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><p>Temp<a href="../Classes/User.html">User</a>,includes properties:clientID,clientSecret,userID。 userID,either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@jiuan.com for more information</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
+						<td><p>The return parameters of ’‘userid’, ’clientID’,and ‘clientSecret’ after verification.
+The interpretation for the verification:
+1. UserAuthen_RegisterSuccess, New-user registration succeeded.
+2. UserAuthen_LoginSuccess， <a href="../Classes/User.html">User</a> login succeeded.
+3. UserAuthen_CombinedSuccess, The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.
+4. UserAuthen_TrySuccess, testing without Internet connection succeeded.
+5. UserAuthen_InvalidateUserInfo, Userid/clientID/clientSecret verification failed.
+6. UserAuthen_SDKInvalidateRight, SDK has not been authorized.
+7. UserAuthen_UserInvalidateRight,<a href="../Classes/User.html">User</a> has not been authorized.
+8. UserAuthen_InternetError, Internet error, verification failed.
+&ndash;PS:
+The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
+@Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeSynchronousTimeFinishBlock</code></th>
+						<td><p>Sync completed. Yes = Success, No = Fail.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>Communication error codes, see section 5.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Restore Sync time</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PO3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandStartPO3MeasureData:Measure:FinishPO3MeasureData:DisposeErrorBlock:" title="commandStartPO3MeasureData:Measure:FinishPO3MeasureData:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandStartPO3MeasureData:Measure:FinishPO3MeasureData:DisposeErrorBlock:">&ndash;&nbsp;commandStartPO3MeasureData:Measure:FinishPO3MeasureData:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Restore Real-time measurements</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandStartPO3MeasureData:(StartPO3MeasureData)<em>startPO3MeasureData</em> Measure:(DisposePO3MeasureData)<em>disposePO3MeasureData</em> FinishPO3MeasureData:(FinishPO3MeasureData)<em>finishPO3MeasureData</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startPO3MeasureData</code></th>
+						<td><p>Start measurement, Return no for fail, return yes for success.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposePO3MeasureData</code></th>
+						<td><p>SpO2 values, including SpO2, pulse rate, pulse intensity. Corresponding keys are spo2, bpm, wave, and pi.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>finishPO3MeasureData</code></th>
+						<td><p>Finish measurement. No for fail, yes for success.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>Communication error codes, see section 5.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Restore Real-time measurements</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PO3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:" title="commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:">&ndash;&nbsp;commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Restore Historical data</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandDisposePO3DataCount:(DisposePO3DataCount)<em>disposePO3DataCount</em> TransferMemorryData:(StartPO3Transmission)<em>startTransmission</em> Memory:(DisposePO3HistoryData)<em>disposePO3HistoryData</em> DisposePO3WaveHistoryData:(DisposePO3WaveHistoryData)<em>disposePO3WaveHistoryData</em> DisposeProgress:(DisposePO3ProgressData)<em>progress</em> FinishTransmission:(FinishPO3Transmission)<em>finishTransmission</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposePO3DataCount</code></th>
+						<td><p>Number of historical offline data measurements.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposePO3HistoryData</code></th>
+						<td><p>date, spo2, bpm, and wave.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposePO3WaveHistoryData</code></th>
+						<td><p>Pulse intensity, corresponding key: wave</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>progress</code></th>
+						<td><p>Data transmission progress from 0-1.0</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>finishTransmission</code></th>
+						<td><p>End transmission of data, yes for success, no for fail.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>Communication error codes, see section 5.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startTransmission:Start</code></th>
+						<td><p>data transmission. Yes for success, no for fail.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Restore Historical data</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PO3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:" title="commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:">&ndash;&nbsp;commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Restore factory settings</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandResetPO3DeviceDisposeResultBlock:(DisposePO3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
+						<td><p>Yes = success, no = fail.
+@param disposeErrorBlock</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBattery</code></th>
+						<td><p>Battery %.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Restore factory settings</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PO3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:" title="commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:">&ndash;&nbsp;commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query power status</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandQueryBatteryInfo:(DisposePO3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em> DisposeBattery:(DisposePO3Battery)<em>disposeBattery</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
+						<td><p>Yes = success, no = fail.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>Communication error codes, see section 5.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBattery</code></th>
+						<td><p>Battery %.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Query power status</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PO3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandEndPO3CurrentConnect:DisposeErrorBlock:" title="commandEndPO3CurrentConnect:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandEndPO3CurrentConnect:DisposeErrorBlock:">&ndash;&nbsp;commandEndPO3CurrentConnect:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Disconnect connection</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandEndPO3CurrentConnect:(DisposePO3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
+						<td><p>Yes = success, no = fail.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>Communication error codes, see section.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Disconnect connection</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PO3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 youdao. All rights reserved. Updated: 2015-12-18</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

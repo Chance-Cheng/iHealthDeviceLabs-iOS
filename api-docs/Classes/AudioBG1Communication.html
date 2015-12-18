@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AudioBG1Communication Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">ynote </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">youdao</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/audioCommunicationObject">+ audioCommunicationObject</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/codeStripStrAnalysis:">- codeStripStrAnalysis:</option>
+		
+		<option value="//api/name/commandCreateBGtestWithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:">- commandCreateBGtestWithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:</option>
+		
+		<option value="//api/name/commandCreateConnectWithUserID:clientID:clientSecret:Authentication:DisposeDiscoverBGBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:">- commandCreateConnectWithUserID:clientID:clientSecret:Authentication:DisposeDiscoverBGBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:</option>
+		
+		<option value="//api/name/getDueDate:">- getDueDate:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AudioBG1Communication Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>AVAudioPlayerDelegate</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AudioBG1Communication.h<br />AudioBG1Communication.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/commandCreateConnectWithUserID:clientID:clientSecret:Authentication:DisposeDiscoverBGBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:" title="commandCreateConnectWithUserID:clientID:clientSecret:Authentication:DisposeDiscoverBGBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreateConnectWithUserID:clientID:clientSecret:Authentication:DisposeDiscoverBGBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateConnectWithUserID:clientID:clientSecret:Authentication:DisposeDiscoverBGBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The authentication will be started by calling this method after the BG meter got connected.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandCreateConnectWithUserID:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(DisposeAuthenticationBlock)<em>disposeAuthenticationBlock</em> DisposeDiscoverBGBlock:(DisposeDiscoverBGBlock)<em>disposeDiscoverBGBlock</em> DisposeBGIDPSBlock:(DisposeBGIDPSBlock)<em>disposeBGIDPSBlock</em> DisposeConnectBGBlock:(DisposeConnectBGBlock)<em>disposeConnectBGBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userID</code></th>
+						<td><p>The only user label, is indicated by form of email address.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>clientID</code></th>
+						<td><p>See &lsquo;clientSecret&rsquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>clientSecret</code></th>
+						<td><p>&lsquo;clientID&rsquo; and &lsquo;clientSecret&rsquo; are the only user label, will be achieved after the register of SDK application. Please contact louie@ihealthlabs.com for the registration.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
+						<td><p>This block returns results after  the verification of userID,clientID,clientSecret.
+&ndash; Results:
+a)  UserAuthen_RegisterSuccess, new register successes.
+b)  UserAuthen_LoginSuccess, user logs in successfully.
+c)  UserAuthen_CombinedSuccess, user has been recognised as iHealth user, the measurement via SDK could be activated, the result data belongs to the user.
+d)  UserAuthen_TrySuccess, network error, the measurement is only for testing, SDK is not fully functional.
+e)  UserAuthen_InvalidateUserInfo, the verification of userID/clientID/clientSecret failed.
+f)  UserAuthen_SDKInvalidateRight, the application has not been authorised.
+g)  UserAuthen_UserInvalidateRight, the user has not been authorised.
+h)  UserAuthen_InternetError, network error, verification failed.
+&ndash; PS:
+1. the measurement via SDK is functional in the case from a) to d).
+2. the measurement via SDK will be determined in the case from e) to h), please contact iHealth support team, louie@ihealthlabs.com
+3. “iHealth Disclaimer” will pop up and need to be proved by the user when SDK is activated for the first time.
+4. if iHealth SDK has been using without internet, there is only 10-day try out because the SDK can not be certified.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeDiscoverBGBlock</code></th>
+						<td><p>This block returns means blood glucose meter plugged in.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGIDPSBlock</code></th>
+						<td><p>This block returns the IDPS of the meter, this will be operated for the first time when the app talks to the meter.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>unitstate</code></th>
+						<td><p>BGUnit_mmolPL stands for mmol/L, BGUnit_mgPmL stands for mg/dL.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeConnectBGBlock,</code></th>
+						<td><p>This block returns the connection status, the connection of the BG meter is regular , the measurement could be processed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock,</code></th>
+						<td><p>This block returns error, please refer to the error codes in the appendix.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The authentication will be started by calling this method after the BG meter got connected.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AudioBG1Communication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandCreateBGtestWithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:" title="commandCreateBGtestWithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreateBGtestWithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateBGtestWithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Establish connection and start BG measurement.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandCreateBGtestWithCode:(NSString *)<em>codeStrips</em> DisposeBGSendCodeBlock:(DisposeBGSendCodeBlock)<em>disposeBGSendCodeBlock</em> DisposeBGStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGBloodBlock:(DisposeBGBloodBlock)<em>disposeBGBloodBlock</em> DisposeBGResultBlock:(DisposeBGResultBlock)<em>disposeBGResultBlock</em> DisposeBGStripOutBlock:(DisposeBGStripOutBlock)<em>disposeBGStripOutBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>codeStrips</code></th>
+						<td><p>The code String gets by scanning the QR code.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGSendCodeBlock</code></th>
+						<td><p>If the QR code is accepted, yes means accepted, no means deny.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGStripInBlock</code></th>
+						<td><p>This block returns yes means the strips slide into the BG meter.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGBloodBlock</code></th>
+						<td><p>This block returns yes means the blood drop has beed sensed from the strip.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGResultBlock</code></th>
+						<td><p>Returns the measurement by the unit of mg/dL, range from 20-600.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGStripOutBlock</code></th>
+						<td><p>This block returns yes means the strip has been pulled out.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns any errors during the measurement, pleaser refer to the error code list.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Establish connection and start BG measurement.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AudioBG1Communication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/audioCommunicationObject" title="audioCommunicationObject"></a>
+	<h3 class="method-title"><code><a href="#//api/name/audioCommunicationObject">+&nbsp;audioCommunicationObject</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialization for <a href="../Classes/BG1.html">BG1</a> (connected BG via sound jack)
+When the app detected the glucose meter, the notification with the name of BG1ConnectNoti will be sent. After the device disconnected, the notification with the name of  BG1DisConnectNoti will be received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (AudioBG1Communication *)audioCommunicationObject</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialization for <a href="../Classes/BG1.html">BG1</a> (connected BG via sound jack)
+When the app detected the glucose meter, the notification with the name of BG1ConnectNoti will be sent. After the device disconnected, the notification with the name of  BG1DisConnectNoti will be received.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AudioBG1Communication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/codeStripStrAnalysis:" title="codeStripStrAnalysis:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/codeStripStrAnalysis:">&ndash;&nbsp;codeStripStrAnalysis:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Analyze code include the bottleID，DueDate and the number of strips.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)codeStripStrAnalysis:(NSString *)<em>encodeString</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>encodeString</code></th>
+						<td><p>The code String gets by scanning the QR code.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Analyze code include the bottleID，DueDate and the number of strips.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AudioBG1Communication.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/getDueDate:" title="getDueDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDueDate:">&ndash;&nbsp;getDueDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><strong><strong><strong><strong>此处加效期为15.1.5的处理,10条有的正确有的不正确</strong></strong></strong></strong>****</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDate *)getDueDate:(uint8_t *)<em>someCodeBuf</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p><strong><strong><strong><strong>此处加效期为15.1.5的处理,10条有的正确有的不正确</strong></strong></strong></strong>****</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AudioBG1Communication.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 youdao. All rights reserved. Updated: 2015-12-18</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
