@@ -30,7 +30,7 @@ Add 2 new Item in ‘Supported external accessory protocols’: com.jiuan.BPV20,
 
 ### How to apply for SDK permissions
 
-[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-Android/blob/master/doc/Developer_Registration_Application_Instruction.md)
+[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/doc/Developer_Registration_Application_Instruction.md)
 ### How to use the iHealth SDK
 ##### 1. Operation procedure for BP3.
 a) Register plug-in device info: `BP3ConnectNoti`;
