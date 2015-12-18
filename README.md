@@ -27,6 +27,10 @@ iHealth Bg5
 
 3、Configuration
 Add 2 new Item in ‘Supported external accessory protocols’: com.jiuan.BPV20, com.jiuan.P930, com.jiuan.BPV21￼C.￼￼￼Add 1 new Item in ‘Required background modes’: App communicates with an accessory、 App communicates using CoreBluetooth![box-model](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/public/iOS_ihealth_Configuration_doc.png?raw=true)
+
+### How to apply for SDK permissions
+
+[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-Android/blob/master/doc/Developer_Registration_Application_Instruction.md)
 ### How to use the iHealth SDK
 ##### 1. Operation procedure for BP3.
 a) Register plug-in device info: `BP3ConnectNoti`;
