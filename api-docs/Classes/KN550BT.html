@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>BP3 Class Reference</title>
+	<title>KN550BT Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -52,27 +52,19 @@
 
 	
 	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/firmwareVersion">firmwareVersion</option>
-		
-		<option value="//api/name/serialNumber">serialNumber</option>
-		
-	</optgroup>
-	
 
 	
 
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/commandDisconnectDevice">- commandDisconnectDevice</option>
+		
 		<option value="//api/name/commandEnergy:errorBlock:">- commandEnergy:errorBlock:</option>
 		
-		<option value="//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:">- commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:</option>
+		<option value="//api/name/commandFounction:errorBlock:">- commandFounction:errorBlock:</option>
 		
-		<option value="//api/name/deleteMeasurePort">- deleteMeasurePort</option>
-		
-		<option value="//api/name/stopBPMeassure:ErrorBlock:">- stopBPMeassure:ErrorBlock:</option>
+		<option value="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:">- commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:</option>
 		
 	</optgroup>
 	
@@ -89,7 +81,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">BP3 Class Reference</h1>
+					<h1 class="title">KN550BT Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -98,7 +90,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>BP3.h<br />BP3.m</td>
+	<td>KN550BT.h<br />KN550BT.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -116,8 +108,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/serialNumber" title="serialNumber"></a>
-	<h3 class="method-title"><code><a href="#//api/name/serialNumber">&nbsp;&nbsp;serialNumber</a></code>
+	<a name="//api/name/commandFounction:errorBlock:" title="commandFounction:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandFounction:errorBlock:">&ndash;&nbsp;commandFounction:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -127,14 +119,31 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>‘serialNumber’ is for separating different device when multiple device have been connected.</p>
+				<p>Synchronize time and judge if the device supports BT auto-connection, offline detection, and if the function on or off, corresponding KEY as haveBlue, haveOffline, blueOpen, offlineOpen. ‘True’ means yes or on, ‘False’ means no or off.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *serialNumber</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandFounction:(BlockDeviceFounction)<em>founction</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to refer ‘error’ in ‘Establish measurement connection’ in KN550BT.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>Function</code></th>
+						<td><p>A block to return the function and states that the device supports.</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -144,7 +153,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>‘serialNumber’ is for separating different device when multiple device have been connected.</p>
+				<p>Synchronize time and judge if the device supports BT auto-connection, offline detection, and if the function on or off, corresponding KEY as haveBlue, haveOffline, blueOpen, offlineOpen. ‘True’ means yes or on, ‘False’ means no or off.</p>
 			</div>
 			
 
@@ -155,53 +164,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP3.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/firmwareVersion" title="firmwareVersion"></a>
-	<h3 class="method-title"><code><a href="#//api/name/firmwareVersion">&nbsp;&nbsp;firmwareVersion</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>&lsquo;firmwareVersion&rsquo; is the firmware version of the device.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *firmwareVersion</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>&lsquo;firmwareVersion&rsquo; is the firmware version of the device.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP3.h</code></p>
+				<p><code class="declared-in-ref">KN550BT.h</code></p>
 			</div>
 			
 			
@@ -219,7 +182,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Query battery remaining energy</p>
+				<p>Query battery remaining energy.</p>
 			</div>
 			
 		    
@@ -239,7 +202,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error in ‘Establish measurement connection’.</p></td>
+						<td><p>A block to return the error in ‘Establish measurement connection’</p></td>
 					</tr>
 				
 				</table>
@@ -253,7 +216,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query battery remaining energy</p>
+				<p>Query battery remaining energy.</p>
 			</div>
 			
 
@@ -264,15 +227,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP3.h</code></p>
+				<p><code class="declared-in-ref">KN550BT.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:" title="commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:">&ndash;&nbsp;commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:</a></code>
+	<a name="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:" title="commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:">&ndash;&nbsp;commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -282,12 +245,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Establish measurement connection and start BP measurement</p>
+				<p>Upload offline data.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandStartMeasureWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> pressure:(BlockPressure)<em>pressure</em> xiaoboWithHeart:(BlockXioaboWithHeart)<em>xiaobo</em> xiaoboNoHeart:(BlockXioaboNoHeart)<em>xiaoboNoHeart</em> result:(BlockMesureResult)<em>result</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryDataWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> totalCount:(BlockBachCount)<em>totalCount</em> pregress:(BlockBachProgress)<em>progress</em> dataArray:(BlockBachArray)<em>uploadDataArray</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -323,12 +286,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>result:</code></th>
-						<td><p>result of the measurement, including systolic pressure, diastolic pressure, pulse rate and irregular judgment. Relevant key: SYS, DIA, heartRate, irregular</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error：</code></th>
+						<th scope="row" class="argument-name"><code>error</code></th>
 						<td><p>error codes.
 Specification:
 1.  BPNormalError:  device error, error message displayed automatically.
@@ -340,23 +298,23 @@ Specification:
 					</tr>
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>TotalCount:</code></th>
+						<td><p>item quantity of total data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>Progress：upload</code></th>
+						<td><p>completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>clientsecret</code></th>
 						<td><p>‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@jiuan.com for more information.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>pressure:</code></th>
-						<td><p>Pressure value in the process of measurement, the unit is ‘mmHg’.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>xiaoboNoHeart:</code></th>
-						<td><p>Wavelet data set without pulse rate</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>xiaobo:</code></th>
-						<td><p>Wavelet data set including pulse rate</p></td>
+						<th scope="row" class="argument-name"><code>UploadDataArray:</code></th>
+						<td><p>offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, SYS, DIA, heartRate, irregular</p></td>
 					</tr>
 				
 				</table>
@@ -370,7 +328,7 @@ Specification:
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Establish measurement connection and start BP measurement</p>
+				<p>Upload offline data.</p>
 			</div>
 			
 
@@ -381,15 +339,15 @@ Specification:
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP3.h</code></p>
+				<p><code class="declared-in-ref">KN550BT.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/stopBPMeassure:ErrorBlock:" title="stopBPMeassure:ErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stopBPMeassure:ErrorBlock:">&ndash;&nbsp;stopBPMeassure:ErrorBlock:</a></code>
+	<a name="//api/name/commandDisconnectDevice" title="commandDisconnectDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandDisconnectDevice">&ndash;&nbsp;commandDisconnectDevice</a></code>
 </h3>
 
 	<div class="method-info">
@@ -399,75 +357,12 @@ Specification:
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Measurement termination and stop upper-arm BPM measurement</p>
+				<p>Disconnect current device</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)stopBPMeassure:(BlockStopResult)<em>result</em> ErrorBlock:(BlockError)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>result</code></th>
-						<td><p>The block return ‘YES’ means measurement has been terminated, return ‘NO’ means termination failed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error in ‘Establish measurement connection' in BP3.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Measurement termination and stop upper-arm BPM measurement</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP3.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/deleteMeasurePort" title="deleteMeasurePort"></a>
-	<h3 class="method-title"><code><a href="#//api/name/deleteMeasurePort">&ndash;&nbsp;deleteMeasurePort</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Disconnect BP3 and delete the measurement port</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)deleteMeasurePort</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandDisconnectDevice</code></div>
 
 		    
 			
@@ -479,7 +374,7 @@ Specification:
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Disconnect BP3 and delete the measurement port</p>
+				<p>Disconnect current device</p>
 			</div>
 			
 
@@ -490,7 +385,7 @@ Specification:
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP3.h</code></p>
+				<p><code class="declared-in-ref">KN550BT.h</code></p>
 			</div>
 			
 			

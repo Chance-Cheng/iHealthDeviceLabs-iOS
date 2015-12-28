@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>BG3Controller Class Reference</title>
+	<title>ZHBPController Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,7 +56,7 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/shareIHBg3Controller">+ shareIHBg3Controller</option>
+		<option value="//api/name/shareZHBPController">+ shareZHBPController</option>
 		
 	</optgroup>
 	
@@ -64,7 +64,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/getCurrentBG3Instace">- getCurrentBG3Instace</option>
+		<option value="//api/name/getAllCurrentZHBPInstace">- getAllCurrentZHBPInstace</option>
 		
 	</optgroup>
 	
@@ -81,7 +81,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">BG3Controller Class Reference</h1>
+					<h1 class="title">ZHBPController Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -90,7 +90,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>BG3Controller.h<br />BG3Controller.m</td>
+	<td>ZHBPController.h<br />ZHBPController.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -108,8 +108,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/shareIHBg3Controller" title="shareIHBg3Controller"></a>
-	<h3 class="method-title"><code><a href="#//api/name/shareIHBg3Controller">+&nbsp;shareIHBg3Controller</a></code>
+	<a name="//api/name/shareZHBPController" title="shareZHBPController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shareZHBPController">+&nbsp;shareZHBPController</a></code>
 </h3>
 
 	<div class="method-info">
@@ -119,12 +119,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initialization for <a href="../Classes/BG3.html">BG3</a> (wireless BG via Bluetooth)</p>
+				<p>Initialize <a href="../Classes/ZHBP.html">ZHBP</a> controller class</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BG3Controller *)shareIHBg3Controller</code></div>
+			<div class="method-subsection method-declaration"><code>+ (ZHBPController *)shareZHBPController</code></div>
 
 		    
 			
@@ -136,7 +136,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Initialization for <a href="../Classes/BG3.html">BG3</a> (wireless BG via Bluetooth)</p>
+				<p>Initialize <a href="../Classes/ZHBP.html">ZHBP</a> controller class</p>
 			</div>
 			
 
@@ -147,15 +147,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG3Controller.h</code></p>
+				<p><code class="declared-in-ref">ZHBPController.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/getCurrentBG3Instace" title="getCurrentBG3Instace"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getCurrentBG3Instace">&ndash;&nbsp;getCurrentBG3Instace</a></code>
+	<a name="//api/name/getAllCurrentZHBPInstace" title="getAllCurrentZHBPInstace"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getAllCurrentZHBPInstace">&ndash;&nbsp;getAllCurrentZHBPInstace</a></code>
 </h3>
 
 	<div class="method-info">
@@ -165,13 +165,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Get all <a href="../Classes/BG3.html">BG3</a> Instance
-The methold needs to be called when the <a href="../Classes/BG3.html">BG3</a> has been triggered. When the app detected the glucose meter, the notification with the name of DeviceAuthenSuccess will be sent. After the device disconnected, the notification with the name of  DeviceAuthenSuccess will be received.</p>
+				<p>Get all <a href="../Classes/ZHBP.html">ZHBP</a> instance,Access control class instance after receiving ZHBPConnectNoti, then use instance to call <a href="../Classes/ZHBP.html">ZHBP</a> related communication methods.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BG3 *)getCurrentBG3Instace</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSArray *)getAllCurrentZHBPInstace</code></div>
 
 		    
 			
@@ -183,8 +182,7 @@ The methold needs to be called when the <a href="../Classes/BG3.html">BG3</a> ha
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get all <a href="../Classes/BG3.html">BG3</a> Instance
-The methold needs to be called when the <a href="../Classes/BG3.html">BG3</a> has been triggered. When the app detected the glucose meter, the notification with the name of DeviceAuthenSuccess will be sent. After the device disconnected, the notification with the name of  DeviceAuthenSuccess will be received.</p>
+				<p>Get all <a href="../Classes/ZHBP.html">ZHBP</a> instance,Access control class instance after receiving ZHBPConnectNoti, then use instance to call <a href="../Classes/ZHBP.html">ZHBP</a> related communication methods.</p>
 			</div>
 			
 
@@ -195,7 +193,7 @@ The methold needs to be called when the <a href="../Classes/BG3.html">BG3</a> ha
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG3Controller.h</code></p>
+				<p><code class="declared-in-ref">ZHBPController.h</code></p>
 			</div>
 			
 			

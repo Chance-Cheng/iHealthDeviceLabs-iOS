@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>BP7S Class Reference</title>
+	<title>ZHBP Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -52,27 +52,15 @@
 
 	
 	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/serialNumber">serialNumber</option>
-		
-	</optgroup>
-	
 
 	
 
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/commandDisconnectDevice">- commandDisconnectDevice</option>
-		
 		<option value="//api/name/commandEnergy:errorBlock:">- commandEnergy:errorBlock:</option>
 		
 		<option value="//api/name/commandFounction:errorBlock:">- commandFounction:errorBlock:</option>
-		
-		<option value="//api/name/commandSetAngle:errorBlock:">- commandSetAngle:errorBlock:</option>
-		
-		<option value="//api/name/commandSetUnit:errorBlock:">- commandSetUnit:errorBlock:</option>
 		
 		<option value="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:">- commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:</option>
 		
@@ -91,7 +79,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">BP7S Class Reference</h1>
+					<h1 class="title">ZHBP Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -100,7 +88,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>BP7S.h<br />BP7S.m</td>
+	<td>ZHBP.h<br />ZHBP.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -118,52 +106,6 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/serialNumber" title="serialNumber"></a>
-	<h3 class="method-title"><code><a href="#//api/name/serialNumber">&nbsp;&nbsp;serialNumber</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>‘serialNumber’ is for separating different device when multiple device have been connected.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *serialNumber</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>‘serialNumber’ is for separating different device when multiple device have been connected.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/commandFounction:errorBlock:" title="commandFounction:errorBlock:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/commandFounction:errorBlock:">&ndash;&nbsp;commandFounction:errorBlock:</a></code>
 </h3>
@@ -190,7 +132,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to refer ‘error’ in ‘Establish measurement connection’ in BP7S.</p></td>
+						<td><p>A block to refer ‘error’ in ‘Establish measurement connection’ in ZHBP.</p></td>
 					</tr>
 				
 					<tr>
@@ -220,7 +162,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
+				<p><code class="declared-in-ref">ZHBP.h</code></p>
 			</div>
 			
 			
@@ -283,7 +225,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
+				<p><code class="declared-in-ref">ZHBP.h</code></p>
 			</div>
 			
 			
@@ -395,179 +337,7 @@ Specification:
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandSetUnit:errorBlock:" title="commandSetUnit:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSetUnit:errorBlock:">&ndash;&nbsp;commandSetUnit:errorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Set units for the Device</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandSetUnit:(NSString *)<em>UnitName</em> errorBlock:(BlockError)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>UnitName</code></th>
-						<td><p>The unit name string that BP7S show result should use,such as @&ldquo;mmHg&rdquo; or @&ldquo;kPa&rdquo;.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error in set Unit communication.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set units for the Device</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandSetAngle:errorBlock:" title="commandSetAngle:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSetAngle:errorBlock:">&ndash;&nbsp;commandSetAngle:errorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Set the effective angle range for left hand measurement and right hand measurement to the Device</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandSetAngle:(NSDictionary *)<em>angleInfo</em> errorBlock:(BlockError)<em>error</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>angleInfo</code></th>
-						<td><p>A dictionary set the max and mini effective angles for left hand measurement and right hand measurement,the angle values type is NSNumber， with the four keys are: @&ldquo;highAngleForLeft&rdquo;,@&ldquo;lowAngleForLeft&rdquo;,@&ldquo;highAngleForRight&rdquo;,@&ldquo;lowAngleForRight&rdquo;.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error in set angles communication.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set the effective angle range for left hand measurement and right hand measurement to the Device</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandDisconnectDevice" title="commandDisconnectDevice"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandDisconnectDevice">&ndash;&nbsp;commandDisconnectDevice</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Disconnect current device</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandDisconnectDevice</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Disconnect current device</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
+				<p><code class="declared-in-ref">ZHBP.h</code></p>
 			</div>
 			
 			
