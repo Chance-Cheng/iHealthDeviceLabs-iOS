@@ -140,9 +140,21 @@ AM3SController:
 ```AM3S *amInstance = [amDeviceArray objectAtIndex:i];```
 d) Use amInstance to call AM3S related communication methods.
 e) If already connected to the correct AM3S, can stop connections to any other AM3S's with the following API:
-```[controller commandCanConnectAMS:], ```
+```[controller commandCanConnectAM3S:], ```
 True: Can connect to AM3S's. False: Stop connecting to other AM3S's.
-##### 11. Operation procedure for PO3.a) Register plug-in device PO3 info:`PO3ConnectNoti`; 
+##### 11. Operation procedure for AM4.a) Register plug-in device AM4 info:`AM4ConnectNoti`; 
+b) Initialize AM4 controller class:
+```AM4Controller *controller = [AM4Controller shareIHAM4Controller];```c)Access control class instance after receiving 
+AM4Controller:
+
+```NSArray *amDeviceArray = [controller getAllCurrentAM4Instace];```
+
+```AM4 *amInstance = [amDeviceArray objectAtIndex:i];```
+d) Use amInstance to call AM4 related communication methods.
+e) If already connected to the correct AM4, can stop connections to any other AM4's with the following API:
+```[controller commandCanConnectAM4:], ```
+True: Can connect to AM4's. False: Stop connecting to other AM4's.
+##### 12. Operation procedure for PO3.a) Register plug-in device PO3 info:`PO3ConnectNoti`; 
 b) Initialize PO3 controller class:
 ```PO3Controller *po3Controller = [PO3Controller shareIHPO3Controller];```c)Access control class instance after receiving 
 PO3Controller:
@@ -151,12 +163,12 @@ PO3Controller:
 
 ```PO3 *po3Instance =[po3Array objectAtIndex:i]```
 d) Use amInstance to call PO3 related communication methods.
-##### 12. Operation procedure for BG1.
+##### 13. Operation procedure for BG1.
 a) Initialization for BG1 (connected BG via soundjack)
 ```AudioBG1Communication *audioBG1Communication=[AudioBG1Communication audioCommunicationObject];```
 b) Using ‘audioBG1Communication’ to call the communication module of the device
 
-##### 13. Operation procedure for BG5.
+##### 14. Operation procedure for BG5.
 a) Initialization for BG5 (wireless BG viaBluetooth)
 ```BG5Controller *controller=[BG5Controller shareIHBg5Controller];```
 ``` BG5 *bg5=[[controller getAllCurrentBG5Instace] objectAtIndex:i];```
