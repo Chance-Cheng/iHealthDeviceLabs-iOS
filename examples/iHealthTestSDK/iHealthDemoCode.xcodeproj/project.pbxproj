@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		182E19341C217D56004BE05D /* iHealthLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E19331C217D56004BE05D /* iHealthLibrary.a */; };
 		4D48B73F19D0F40D00BA5A84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D48B73E19D0F40D00BA5A84 /* Foundation.framework */; };
 		4D48B74119D0F40D00BA5A84 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D48B74019D0F40D00BA5A84 /* CoreGraphics.framework */; };
 		4D48B74319D0F40D00BA5A84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D48B74219D0F40D00BA5A84 /* UIKit.framework */; };
@@ -31,6 +30,7 @@
 		4D5405C019D147D80059BF9C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5405BF19D147D80059BF9C /* Accelerate.framework */; };
 		4D5405C219D148020059BF9C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5405C119D148020059BF9C /* SystemConfiguration.framework */; };
 		4D5405C419D148390059BF9C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5405C319D148390059BF9C /* MediaPlayer.framework */; };
+		86BBB49B1C898CCD009BE858 /* libAMGenerateSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BBB49A1C898CCD009BE858 /* libAMGenerateSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		182E19331C217D56004BE05D /* iHealthLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = iHealthLibrary.a; sourceTree = "<group>"; };
 		4D48B73B19D0F40D00BA5A84 /* iHealthDemoCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHealthDemoCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D48B73E19D0F40D00BA5A84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4D48B74019D0F40D00BA5A84 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,8 +102,17 @@
 		4D5405F119D14B910059BF9C /* POHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POHeader.h; sourceTree = "<group>"; };
 		4D5405F219D14B910059BF9C /* POMacroFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POMacroFile.h; sourceTree = "<group>"; };
 		4D5405F319D14B910059BF9C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		4D5540F81BE1CA9C003AA3AD /* AM4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AM4.h; sourceTree = "<group>"; };
 		4D5540F91BE1CA9C003AA3AD /* AM4Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AM4Controller.h; sourceTree = "<group>"; };
+		862B46CB1C47B46B003DE1D9 /* AM4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AM4.h; sourceTree = "<group>"; };
+		86BBB49A1C898CCD009BE858 /* libAMGenerateSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMGenerateSDK.a; sourceTree = "<group>"; };
+		9F0804961C43A6F000236543 /* HTHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTHeader.h; sourceTree = "<group>"; };
+		9F0804971C43A6F000236543 /* HTMacroFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMacroFile.h; sourceTree = "<group>"; };
+		9F0804981C43A70400236543 /* HTS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTS.h; sourceTree = "<group>"; };
+		9F08049B1C43A73200236543 /* HTSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSController.h; sourceTree = "<group>"; };
+		9F0804AE1C43A94400236543 /* KN550BT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KN550BT.h; sourceTree = "<group>"; };
+		9F0804AF1C43A94400236543 /* KN550BTController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KN550BTController.h; sourceTree = "<group>"; };
+		9F0804B01C43A96200236543 /* KD926.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KD926.h; sourceTree = "<group>"; };
+		9F0804B11C43A96200236543 /* KD926Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KD926Controller.h; sourceTree = "<group>"; };
 		9F5A83341C06A39F00EF0FE7 /* BP3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP3.h; sourceTree = "<group>"; };
 		9F5A83351C06A39F00EF0FE7 /* BP3Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP3Controller.h; sourceTree = "<group>"; };
 		9F5A83361C06A39F00EF0FE7 /* BP3L.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP3L.h; sourceTree = "<group>"; };
@@ -130,9 +138,9 @@
 				4D5405C219D148020059BF9C /* SystemConfiguration.framework in Frameworks */,
 				4D5405C019D147D80059BF9C /* Accelerate.framework in Frameworks */,
 				4D48B7AA19D0FA9300BA5A84 /* ExternalAccessory.framework in Frameworks */,
+				86BBB49B1C898CCD009BE858 /* libAMGenerateSDK.a in Frameworks */,
 				4D48B7A819D0FA8B00BA5A84 /* CoreBluetooth.framework in Frameworks */,
 				4D48B74119D0F40D00BA5A84 /* CoreGraphics.framework in Frameworks */,
-				182E19341C217D56004BE05D /* iHealthLibrary.a in Frameworks */,
 				4D48B74319D0F40D00BA5A84 /* UIKit.framework in Frameworks */,
 				4D48B73F19D0F40D00BA5A84 /* Foundation.framework in Frameworks */,
 			);
@@ -189,7 +197,7 @@
 		4D48B74419D0F40D00BA5A84 /* iHealthDemoCode */ = {
 			isa = PBXGroup;
 			children = (
-				182E19331C217D56004BE05D /* iHealthLibrary.a */,
+				86BBB49A1C898CCD009BE858 /* libAMGenerateSDK.a */,
 				4D5405D019D14B910059BF9C /* include */,
 				4D48B74D19D0F40D00BA5A84 /* AppDelegate.h */,
 				4D48B74E19D0F40D00BA5A84 /* AppDelegate.m */,
@@ -242,13 +250,7 @@
 		4D5405D019D14B910059BF9C /* include */ = {
 			isa = PBXGroup;
 			children = (
-				4D5405D519D14B910059BF9C /* AMHeader.h */,
-				4D5405D619D14B910059BF9C /* AMMacroFile.h */,
-				4D5405D119D14B910059BF9C /* AM3.h */,
-				4D5405D219D14B910059BF9C /* AM3Controller.h */,
-				4D5405D319D14B910059BF9C /* AM3S.h */,
-				4D5405D419D14B910059BF9C /* AM3SController.h */,
-				4D5540F81BE1CA9C003AA3AD /* AM4.h */,
+				862B46CB1C47B46B003DE1D9 /* AM4.h */,
 				4D5540F91BE1CA9C003AA3AD /* AM4Controller.h */,
 				9F9895991B9D8A6000FBA47E /* BPHeader.h */,
 				9F98959A1B9D8A6000FBA47E /* BPMacroFile.h */,
@@ -262,8 +264,22 @@
 				9F5A833B1C06A39F00EF0FE7 /* BP7Controller.h */,
 				9F5A833C1C06A39F00EF0FE7 /* BP7S.h */,
 				9F5A833D1C06A39F00EF0FE7 /* BP7SController.h */,
+				9F0804AE1C43A94400236543 /* KN550BT.h */,
+				9F0804AF1C43A94400236543 /* KN550BTController.h */,
+				9F0804B01C43A96200236543 /* KD926.h */,
+				9F0804B11C43A96200236543 /* KD926Controller.h */,
 				9F5A833E1C06A39F00EF0FE7 /* ABI.h */,
 				9F5A833F1C06A39F00EF0FE7 /* ABIController.h */,
+				9F0804961C43A6F000236543 /* HTHeader.h */,
+				9F0804971C43A6F000236543 /* HTMacroFile.h */,
+				9F0804981C43A70400236543 /* HTS.h */,
+				9F08049B1C43A73200236543 /* HTSController.h */,
+				4D5405D519D14B910059BF9C /* AMHeader.h */,
+				4D5405D619D14B910059BF9C /* AMMacroFile.h */,
+				4D5405D119D14B910059BF9C /* AM3.h */,
+				4D5405D219D14B910059BF9C /* AM3Controller.h */,
+				4D5405D319D14B910059BF9C /* AM3S.h */,
+				4D5405D419D14B910059BF9C /* AM3SController.h */,
 				4D5405EF19D14B910059BF9C /* PO3.h */,
 				4D5405F019D14B910059BF9C /* PO3Controller.h */,
 				4D5405F119D14B910059BF9C /* POHeader.h */,
@@ -276,14 +292,14 @@
 				4D5405DC19D14B910059BF9C /* BG5Controller.h */,
 				4D5405DD19D14B910059BF9C /* BGHeader.h */,
 				4D5405DE19D14B910059BF9C /* BGMacroFile.h */,
-				4D5405ED19D14B910059BF9C /* HSHeader.h */,
-				4D5405EE19D14B910059BF9C /* HSMacroFile.h */,
 				4D5405E719D14B910059BF9C /* HS3.h */,
 				4D5405E819D14B910059BF9C /* HS3Controller.h */,
 				4D5405E919D14B910059BF9C /* HS4.h */,
 				4D5405EA19D14B910059BF9C /* HS4Controller.h */,
 				4D5405EB19D14B910059BF9C /* HS5.h */,
 				4D5405EC19D14B910059BF9C /* HS5Controller.h */,
+				4D5405ED19D14B910059BF9C /* HSHeader.h */,
+				4D5405EE19D14B910059BF9C /* HSMacroFile.h */,
 			);
 			path = include;
 			sourceTree = "<group>";

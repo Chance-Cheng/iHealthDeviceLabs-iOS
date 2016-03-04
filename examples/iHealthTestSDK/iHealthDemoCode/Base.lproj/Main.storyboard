@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1zy-0c-WgN">
-                                <rect key="frame" x="40" y="74" width="240" height="378"/>
+                                <rect key="frame" x="40" y="74" width="240" height="267"/>
                                 <color key="backgroundColor" white="0.70723083939999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -61,6 +61,26 @@
                                     <action selector="BPStartMeasure:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="2dI-aL-ogM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7E-y9-fJu">
+                                <rect key="frame" x="12" y="368" width="158" height="30"/>
+                                <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KD926 Get OfflineData">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="KD926GetOfflinData:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="9EP-IG-xeW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK1-6k-Ate">
+                                <rect key="frame" x="180" y="368" width="128" height="30"/>
+                                <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KD926 Get Energy">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="KD926GetEnergy:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="qVo-93-Fz5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -68,6 +88,8 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="kd926EnergyBtn" destination="cK1-6k-Ate" id="nXb-jn-90Y"/>
+                        <outlet property="kd926OfflineDataBtn" destination="H7E-y9-fJu" id="9Xv-ax-LQN"/>
                         <outlet property="tipTextView" destination="1zy-0c-WgN" id="KqF-Jf-pzn"/>
                     </connections>
                 </viewController>
@@ -397,9 +419,4 @@
             <point key="canvasLocation" x="277" y="-1464"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

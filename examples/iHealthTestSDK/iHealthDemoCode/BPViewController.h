@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BPHeader.h"
 
 @interface BPViewController : UIViewController
+{
+    
+}
+
+@property (strong, nonatomic) NSString *currentKD926UUIDStr;
 
 @property (weak, nonatomic) IBOutlet UITextView *tipTextView;
+@property (strong, nonatomic) IBOutlet UIButton *kd926OfflineDataBtn;
+@property (strong, nonatomic) IBOutlet UIButton *kd926EnergyBtn;
+
+-(IBAction)testBattary:(id)sender;
 
 @end

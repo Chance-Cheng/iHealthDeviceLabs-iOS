@@ -62,58 +62,75 @@ typedef void (^DisposeSynchronousTimeFinishBlock) (BOOL finishSynchronous);//Syn
 @property (copy,   nonatomic) NSString *isInUpdateProcess;
 @property (retain, nonatomic) NSString *firmwareVersion;
 
-//Sync time
-/*
- Input Parameters:
- tempUser,includes properties:clientID,clientSecret,userID。 userID,either email or mobile phone number (mobile phone number not yet supported).
- ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@jiuan.com for more information
- Return Parameters:
- disposeAuthenticationBlock: The return parameters of ’‘userid’, ’clientID’,
- and ‘clientSecret’ after verification。 The interpretation for the verification:
- UserAuthen_RegisterSuccess: New-user registration succeeded. UserAuthen_LoginSuccess: User login succeeded.
- UserAuthen_CombinedSuccess: The user is an iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user. UserAuthen_TrySuccess: Testing without internet connection succeeded. UserAuthen_InvalidateUserInfo: Userid/clientID/clientSecret verification failed. UserAuthen_SDKInvalidateRight: SDK has not been authorized. UserAuthen_UserInvalidateRight: User has not been authorized.
- UserAuthen_InternetError: Internet error, verification failed.
- The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
- Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; there is 10-day trial period if the SDK cannot connect to the internet, the SDK is fully functional during tryout period, but will be terminated without a working internet connection after 10 days.
- disposeSynchronousTimeFinishBlock:Sync completed. Yes = Success, No = Fail. disposeErrorBlock: Communication error codes, see section 5
+/**
+ * Restore Sync time
+ * @param tempUser TempUser,includes properties:clientID,clientSecret,userID。 userID,either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@jiuan.com for more information
+ * @param disposeAuthenticationBlock The return parameters of ’‘userid’, ’clientID’,and ‘clientSecret’ after verification.
+ * The interpretation for the verification:
+ *  1. UserAuthen_RegisterSuccess, New-user registration succeeded.
+ *  2. UserAuthen_LoginSuccess， User login succeeded.
+ *  3. UserAuthen_CombinedSuccess, The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.
+ *  4. UserAuthen_TrySuccess, testing without Internet connection succeeded.
+ *  5. UserAuthen_InvalidateUserInfo, Userid/clientID/clientSecret verification failed.
+ *  6. UserAuthen_SDKInvalidateRight, SDK has not been authorized.
+ *  7. UserAuthen_UserInvalidateRight,User has not been authorized.
+ *  8. UserAuthen_InternetError, Internet error, verification failed.
+ *  --PS:
+ *  The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
+ *  @Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.
+ * @param disposeSynchronousTimeFinishBlock Sync completed. Yes = Success, No = Fail.
+ * @param disposeErrorBlock Communication error codes, see section 5.
  */
 -(void)commandCreatePO3User:(User *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock DisposeResultBlock:(DisposeSynchronousTimeFinishBlock)disposeSynchronousTimeFinishBlock DisposeErrorBlock:(DisposePO3ErrorBlock)disposeErrorBlock;
 
-//Real-time measurements
-/*
- Return parameters:
- startPO3MeasureData: Start measurement. Return no for fail, return yes for success. disposePO3MeasureData:SpO2 values, including SpO2, pulse rate, pulse intensity. Corresponding keys are spo2, bpm, wave, and pi.
- finishPO3MeasureData: Finish measurement. No for fail, yes for success.
- disposeErrorBlock: Communication error codes, see section 5
+
+/**
+ * Restore Real-time measurements
+ * @param startPO3MeasureData  Start measurement, Return no for fail, return yes for success.
+ * @param disposePO3MeasureData  SpO2 values, including SpO2, pulse rate, pulse intensity. Corresponding keys are spo2, bpm, wave, and pi.
+ * @param finishPO3MeasureData  Finish measurement. No for fail, yes for success.
+ * @param disposeErrorBlock Communication error codes, see section 5.
  */
 -(void)commandStartPO3MeasureData:(StartPO3MeasureData)startPO3MeasureData Measure:(DisposePO3MeasureData)disposePO3MeasureData  FinishPO3MeasureData:(FinishPO3MeasureData)finishPO3MeasureData  DisposeErrorBlock:(DisposePO3ErrorBlock)disposeErrorBlock;
 
-//Historical data
-/*
- Return parameters:
- disposePO3DataCount:Number of historical offline data measurements startTransmission:Start data transmission. Yes for success, no for fail. disposePO3HistoryData:date, spo2, bpm, and wave. disposePO3WaveHistoryData:Pulse intensity, corresponding key: wave progress: Data transmission progress from 0-1.0 finishTransmission:End transmission of data, yes for success, no for fail disposeErrorBlock:Communication error codes, see section 5
+
+
+/**
+ * Restore Historical data
+ * @param disposePO3DataCount Number of historical offline data measurements.
+ * @param startTransmission:Start  data transmission. Yes for success, no for fail.
+ * @param disposePO3HistoryData date, spo2, bpm, and wave.
+ * @param disposePO3WaveHistoryData Pulse intensity, corresponding key: wave
+ * @param progress  Data transmission progress from 0-1.0
+ * @param finishTransmission End transmission of data, yes for success, no for fail.
+ * @param disposeErrorBlock Communication error codes, see section 5.
  */
 -(void)commandDisposePO3DataCount:(DisposePO3DataCount)disposePO3DataCount TransferMemorryData:(StartPO3Transmission)startTransmission Memory:(DisposePO3HistoryData)disposePO3HistoryData DisposePO3WaveHistoryData:(DisposePO3WaveHistoryData)disposePO3WaveHistoryData   DisposeProgress:(DisposePO3ProgressData)progress  FinishTransmission:(FinishPO3Transmission)finishTransmission DisposeErrorBlock:(DisposePO3ErrorBlock)disposeErrorBlock;
 
-//Restore factory settings
-/*
- Return parameters:
- disposeBlock: Returns yes for success, no for fail. disposeErrorBlock:Communication error codes, see section 5
+
+/**
+ * Restore factory settings
+ * @param disposeBlock  Yes = success, no = fail.
+ * @param disposeErrorBlock
  */
 -(void)commandResetPO3DeviceDisposeResultBlock:(DisposePO3Block)disposeBlock DisposeErrorBlock:(DisposePO3ErrorBlock)disposeErrorBlock;
 
-//Query power status
-/*
- Return parameters:
- disposeBlock: Yes = success, no = fail. disposeErrorBlock:Communication error codes, see section 5
- disposeBattery:Battery %
+
+
+/**
+ * Query power status
+ * @param disposeBattery Battery %.
+ * @param disposeBlock  Yes = success, no = fail.
+ * @param disposeErrorBlock  Communication error codes, see section 5.
  */
 -(void)commandQueryBatteryInfo:(DisposePO3Block)disposeBlock DisposeErrorBlock:(DisposePO3ErrorBlock)disposeErrorBlock DisposeBattery:(DisposePO3Battery)disposeBattery;
 
-//Disconnect connection
-/*
- Return parameters:
- disposeBlock: Yes = success, no = fail disposeErrorBlock:Communication error codes, see section 5
+
+
+/**
+ * Disconnect connection
+ * @param disposeBlock  Yes = success, no = fail.
+ * @param disposeErrorBlock  Communication error codes, see section.
  */
 -(void)commandEndPO3CurrentConnect:(DisposePO3Block)disposeBlock DisposeErrorBlock:(DisposePO3ErrorBlock)disposeErrorBlock;
 @end

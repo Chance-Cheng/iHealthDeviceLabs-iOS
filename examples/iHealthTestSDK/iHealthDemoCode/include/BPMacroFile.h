@@ -78,12 +78,17 @@ typedef void(^BlockDelPortResult)(BOOL result);
 #define BP3LDisConnectNoti @"BP3LDisConnectNoti"
 #define BP7SConnectNoti @"BP7SConnectNoti"
 #define BP7SDisConnectNoti @"BP7SDisConnectNoti"
+#define KN550BTConnectNoti @"KN550BTConnectNoti"
+#define KN550BTDisConnectNoti @"KN550BTDisConnectNoti"
+
+#define KD926ConnectNoti @"KD926ConnectNoti"
+#define KD926DisConnectNoti @"KD926DisConnectNoti"
 
 #define BPDeviceID @"ID"
 #define BPSDKRightApi  @"OpenApiBP"
 
 
-
+#define IDPS_ID                    @"ID"
 
 #define ABIConnectNoti @"ABIConnectNoti"
 #define ABIDisConnectNoti @"ABIDisConnectNoti"
