@@ -30,7 +30,7 @@
 		4D5405C019D147D80059BF9C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5405BF19D147D80059BF9C /* Accelerate.framework */; };
 		4D5405C219D148020059BF9C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5405C119D148020059BF9C /* SystemConfiguration.framework */; };
 		4D5405C419D148390059BF9C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5405C319D148390059BF9C /* MediaPlayer.framework */; };
-		86BBB49E1C8992DE009BE858 /* libAMGenerateSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BBB49D1C8992DE009BE858 /* libAMGenerateSDK.a */; };
+		864A0E531C8D922D00654950 /* iHealthLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 864A0E521C8D922D00654950 /* iHealthLibrary.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +104,7 @@
 		4D5405F319D14B910059BF9C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		4D5540F91BE1CA9C003AA3AD /* AM4Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AM4Controller.h; sourceTree = "<group>"; };
 		862B46CB1C47B46B003DE1D9 /* AM4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AM4.h; sourceTree = "<group>"; };
-		86BBB49D1C8992DE009BE858 /* libAMGenerateSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMGenerateSDK.a; sourceTree = "<group>"; };
+		864A0E521C8D922D00654950 /* iHealthLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = iHealthLibrary.a; sourceTree = "<group>"; };
 		9F0804961C43A6F000236543 /* HTHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTHeader.h; sourceTree = "<group>"; };
 		9F0804971C43A6F000236543 /* HTMacroFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMacroFile.h; sourceTree = "<group>"; };
 		9F0804981C43A70400236543 /* HTS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTS.h; sourceTree = "<group>"; };
@@ -138,9 +138,9 @@
 				4D5405C219D148020059BF9C /* SystemConfiguration.framework in Frameworks */,
 				4D5405C019D147D80059BF9C /* Accelerate.framework in Frameworks */,
 				4D48B7AA19D0FA9300BA5A84 /* ExternalAccessory.framework in Frameworks */,
-				86BBB49E1C8992DE009BE858 /* libAMGenerateSDK.a in Frameworks */,
 				4D48B7A819D0FA8B00BA5A84 /* CoreBluetooth.framework in Frameworks */,
 				4D48B74119D0F40D00BA5A84 /* CoreGraphics.framework in Frameworks */,
+				864A0E531C8D922D00654950 /* iHealthLibrary.a in Frameworks */,
 				4D48B74319D0F40D00BA5A84 /* UIKit.framework in Frameworks */,
 				4D48B73F19D0F40D00BA5A84 /* Foundation.framework in Frameworks */,
 			);
@@ -197,7 +197,6 @@
 		4D48B74419D0F40D00BA5A84 /* iHealthDemoCode */ = {
 			isa = PBXGroup;
 			children = (
-				86BBB49D1C8992DE009BE858 /* libAMGenerateSDK.a */,
 				4D5405D019D14B910059BF9C /* include */,
 				4D48B74D19D0F40D00BA5A84 /* AppDelegate.h */,
 				4D48B74E19D0F40D00BA5A84 /* AppDelegate.m */,
@@ -251,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				862B46CB1C47B46B003DE1D9 /* AM4.h */,
+				864A0E521C8D922D00654950 /* iHealthLibrary.a */,
 				4D5540F91BE1CA9C003AA3AD /* AM4Controller.h */,
 				9F9895991B9D8A6000FBA47E /* BPHeader.h */,
 				9F98959A1B9D8A6000FBA47E /* BPMacroFile.h */,
@@ -536,8 +536,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jianbo Xu (TBVP5D9MDE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jianbo Xu (TBVP5D9MDE)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 嘉苏 何 (629KSETBK4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 嘉苏 何 (629KSETBK4)";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iHealthDemoCode/iHealthDemoCode-Prefix.pch";
@@ -551,7 +551,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "04978c0d-28fe-4174-ad8e-2f0b8257d9c1";
+				PROVISIONING_PROFILE = "e9f2c7dc-7c49-475c-a962-b7dc8f1add72";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -577,7 +577,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "04978c0d-28fe-4174-ad8e-2f0b8257d9c1";
+				PROVISIONING_PROFILE = "e9f2c7dc-7c49-475c-a962-b7dc8f1add72";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
