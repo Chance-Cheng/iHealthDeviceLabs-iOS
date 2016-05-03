@@ -44,7 +44,21 @@
     NSString *clientSDKID;
     NSString *clientSDKSecret;
     
+    //功能标志位
+    BOOL upAirMeasureFlg;    //上气、下气测量标志位
+    BOOL armMeasureFlg;    //腕式、臂式
+    BOOL haveAngleSensorFlg;       //是否带角度
+    BOOL haveOfflineFlg;     //是否有离线数据
+    BOOL haveHSDFlg;         //是否有HSD
+    BOOL mutableUploadFlg;   //记忆组别
+    BOOL haveAngleSetFlg;   //是否带手腕角度设置
+    BOOL selfUpdateFlg;      //是否自升级
+    
+    
+    
+    
     NSMutableArray *totalHistoryArray;
+    
  }
 
 @property (strong, nonatomic) NSString *currentUUID;
@@ -53,6 +67,7 @@
 @property (strong, nonatomic) NSTimer *startMeasureTimer;
 
 #pragma mark - Hypogenous query
+
 /**
  * Synchronize time and judge if the device supports BT auto-connection, offline detection, and if the function on or off, corresponding KEY as haveBlue, haveOffline, blueOpen, offlineOpen. ‘True’ means yes or on, ‘False’ means no or off.
  * @param Function  A block to return the function and states that the device supports.
@@ -87,8 +102,8 @@
  *  The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
  *  @Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.
  * @param  TotalCount: item quantity of total data
- * @param  Progress：upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.
- * @param  UploadDataArray:	offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, SYS, DIA, heartRate, irregular
+ * @param  Progress: upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.
+ * @param  UploadDataArray:	offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, sys, dia, heartRate, irregular.
  * @param error   error codes.
  * Specification:
  *   1.  BPNormalError:  device error, error message displayed automatically.

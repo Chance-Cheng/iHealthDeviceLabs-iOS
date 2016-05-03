@@ -26,7 +26,7 @@ typedef void (^StartHS3Transmission)(BOOL startTransmission);
 //Finish memory transmission.
 typedef void (^FinishHS3Transmission)();
 //Stable weight (Kg)
-typedef void (^StableHS3Weight)(NSNumber *StableWeight);
+typedef void (^StableHS3Weight)(NSDictionary *StableWeightDic);
 //
 typedef void (^FinishHS3Init)();
 //

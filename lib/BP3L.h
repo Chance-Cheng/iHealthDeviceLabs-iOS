@@ -102,7 +102,7 @@ typedef void(^BlockStopSuccess)();
  * @param Pressure  Pressure value in the process of measurement, the unit is ‘mmHg’.
  * @param xiaobo  Wavelet data set including pulse rate
  * @param xiaoboNoHeart   Wavelet data set without pulse rate
- * @param result   result of the measurement, including systolic pressure, diastolic pressure, pulse rate and irregular judgment. Relevant key: SYS, DIA, heartRate, irregular
+ * @param result   result of the measurement, including systolic pressure, diastolic pressure, pulse rate and irregular judgment. Relevant key: time, sys, dia, heartRate, irregular.
  * @param error   Return error codes.
  * Specification:
  *   1.  BPNormalError:  device error, error message displayed automatically.
@@ -124,7 +124,7 @@ typedef void(^BlockStopSuccess)();
 /**
  * Synchronize time and judge if the device supports BT auto-connection, offline detection, and if the function on or off, corresponding KEY as haveBlue, haveOffline, blueOpen, offlineOpen. ‘True’ means yes or on, ‘False’ means no or off
  * @param Function  A block to return the function and states that the device supports.
- * @param error  A block to refer ‘error’ in ‘Establish measurement connection’ in BP7S.
+ * @param error  A block to refer ‘error’ in ‘Establish measurement connection’ in BP3L.
  */
 -(void)commandFounction:(BlockDeviceFounction)founction errorBlock:(BlockError)error;
 
@@ -136,7 +136,7 @@ typedef void(^BlockStopSuccess)();
 -(void)commandEnergy:(BlockEnergyValue)energyValue errorBlock:(BlockError)error;
 
 /**
- *Disconnect current device
+ * Disconnect current device
  */
 -(void)commandDisconnectDevice;
 

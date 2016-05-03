@@ -34,7 +34,7 @@ typedef void (^DisposeBGStripOutBlock)(BOOL stripOut);
 //
 typedef void (^DisposeBGBloodBlock)(BOOL blood);
 //
-typedef void (^DisposeBGResultBlock)(NSNumber* result);
+typedef void (^DisposeBGResultBlock)(NSDictionary* result);
 //
 typedef void (^DisposeBGSendCodeBlock)(BOOL sendOk);
 //

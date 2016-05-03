@@ -17,5 +17,5 @@
 #import "HS4Controller.h"
 #import "HS5Controller.h"
 #import "HSMacroFile.h"
-
+#import "iHealthHS6.h"
 #endif

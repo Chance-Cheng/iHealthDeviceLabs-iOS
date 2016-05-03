@@ -29,7 +29,7 @@
 +(ABIController *)shareABIController;
 
 /**
- * Get all ABI instance,Access control class instance after receiving DeviceAuthenSuccess, then use instance to call ABI related communication methods.
+ * Get all ABI instance,Access control class instance after receiving ABIConnectNoti, then use instance to call ABI related communication methods.
  */
 -(ABI *)getCurrentABIInstace;
 

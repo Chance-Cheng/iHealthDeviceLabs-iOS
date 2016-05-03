@@ -14,23 +14,38 @@
     NSMutableArray *AM3SArray;
 }
 
-//Initialize AM3S controller class
+/**
+ * Initialize AM3S controller class
+ */
 +(AM3SController *)shareIHAM3SController;
 
-//Access control class instance after receiving AM3SConnectNoti, then use instance to call AM3s related communication methods
+/**
+ * Access control class instance after receiving AM3SConnectNoti, then use instance to call AM3s related communication methods
+ */
 -(NSArray *)getAllCurrentAM3SInstace;
 
-//To specify a specific AM3s device to improve the efficiency of the connection, use the following API. Specify the AM3s unique ID (MAC Address).
+/**
+ * To specify a specific AM3s device to improve the efficiency of the connection, use the following API. Specify the AM3s unique ID (MAC Address).
+ */
 -(void)commandSetYourDeviceID:(NSString *)tempDeviceID;
 
-//If already connected to the correct AM3, can stop connections to any other AM3's with the following API. True: Can connect to AM3s's. False: Stop connecting to other AM3s's.
+
+/**
+ * If already connected to the correct AM3, can stop connections to any other AM3's with the following API. True: Can connect to AM3s's. False: Stop connecting to other AM3s's.
+ */
 -(void)commandCanConnectOtherDevice:(BOOL)tempFlag;
 
 
-//Restart search AM3S
+
+/**
+ * Restart search AM3S
+ */
 -(void)startSearchAM3S;
 
-//Stop search AM3S
+
+/**
+ * Stop search AM3S
+ */
 -(void)stopSearchAM3S;
 
 

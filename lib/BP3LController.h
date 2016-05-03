@@ -14,12 +14,12 @@
 }
 
 /**
- * Initialize BP3 controller class
+ * Initialize BP3L controller class
  */
 +(BP3LController *)shareBP3LController;
 
 /**
- * Get all BP3L instance,Access control class instance after receiving DeviceAuthenSuccess then use instance to call BP3L related communication methods.
+ * Get all BP3L instance,Access control class instance after receiving BP3LConnectNoti then use instance to call BP3L related communication methods.
  */
 -(NSArray *)getAllCurrentBP3LInstace;
 

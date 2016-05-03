@@ -20,8 +20,8 @@ typedef enum{
 }ActiveState;
 
 typedef enum{
-    State_wrist,//
     State_waist,//
+    State_wrist,//
     State_sleep//
 }QueryAM3State;
 
@@ -77,8 +77,8 @@ typedef enum{
 }AM3SActiveState;
 
 typedef enum{
-    AM3SState_wrist = 0,//
     AM3SState_waist,//
+    AM3SState_wrist,//
     AM3SState_sleep//
 }QueryAM3SState;
 
@@ -107,10 +107,10 @@ typedef enum{
 typedef enum{
     AM4TimeFormat_hh,//12
     AM4TimeFormat_HH,//24
-    AM4TimeFormat_NoEuropeAndhh,//不是欧洲12小时
-    AM4TimeFormat_EuropeAndhh,//欧洲12小时
-    AM4TimeFormat_NoEuropeAndHH,//不是欧洲24小时
-    AM4TimeFormat_EuropeAndHH,//欧洲24小时
+    AM4TimeFormat_NoEuropeAndhh,//
+    AM4TimeFormat_EuropeAndhh,
+    AM4TimeFormat_NoEuropeAndHH,
+    AM4TimeFormat_EuropeAndHH,
 }AM4TimeFormatAndNation;
 
 
@@ -118,34 +118,34 @@ typedef enum{
 typedef enum{
     AM4KmUnit_mile,
     AM4KmUnit_km,
-}AM4KmUnit;//单位
+}AM4KmUnit;
 
 typedef enum{
     AM4SwimmingUnit_m,
     AM4SwimmingUnit_km,
-}AM4SwimmingUnit;//游泳单位
+}AM4SwimmingUnit;
 
 
 
 typedef enum{
-    AM4State_wrist,//手腕
-    AM4State_waist,//腰
-    AM4State_sleep//睡眠
+    AM4State_waist,
+    AM4State_wrist,
+    AM4State_sleep
 }AM4QueryState;
 
 
 typedef enum{
-    AM4Picture_one,//第一套
-    AM4Picture_two,//第二套
+    AM4Picture_one,
+    AM4Picture_two,
 }AM4Picture;
 
 typedef enum{
-    AM4SwimmingAction_Crawl,//自由泳
-    AM4SwimmingAction_Breaststroke,//蛙泳,
-    AM4SwimmingAction_Backstroke, //仰泳
-    AM4SwimmingAction_Butterfly,//蝶泳
-    AM4SwimmingAction_MixedSwimming,//混合泳
-    
+    AM4SwimmingAction_Crawl,
+    AM4SwimmingAction_Breaststroke,
+    AM4SwimmingAction_Backstroke,
+    AM4SwimmingAction_Butterfly,
+    AM4SwimmingAction_MixedSwimming,
+    AM4SwimmingAction_Unkonw
 }AM4SwimmingAction;
 
 
@@ -158,18 +158,18 @@ typedef enum{
 
 
 typedef enum{
-    AM4Active_State =0,//运动
-    AM4Sleep_State =1,//睡眠
-    AM4Fly_State =2, //飞行
-    AM4Workout_State=4, //workout
-    AM4Swimming_State=5, //游泳
+    AM4Active_State =0,
+    AM4Sleep_State =1,
+    AM4Fly_State =2,
+    AM4Workout_State=4,
+    AM4Swimming_State=5,
 }AM4ActiveState;
 
 
 typedef enum{
     AM4Gender_Male = 0,
     AM4Gender_Female
-}AM4Gender;//性别
+}AM4Gender;
 
 
 

@@ -18,7 +18,7 @@
 +(BP5Controller *)shareBP5Controller;
 
 /**
- * Get all BP5 instance,Access control class instance after receiving DeviceAuthenSuccess, then use instance to call BP5 related communication methods.
+ * Get all BP5 instance,Access control class instance after receiving BP5ConnectNoti, then use instance to call BP5 related communication methods.
  */
 -(NSArray *)getAllCurrentBP5Instace;
 @end

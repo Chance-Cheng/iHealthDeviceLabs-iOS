@@ -27,7 +27,7 @@ typedef void (^FinishHS4Transmission)();
 //Current weight, (Kg)
 typedef void (^UnStableWeight)(NSNumber *unStableWeight);
 //Stable weight, (Kg)
-typedef void (^StableWeight)(NSNumber *StableWeight);
+typedef void (^StableWeight)(NSDictionary *StableWeightDic);
 
 
 

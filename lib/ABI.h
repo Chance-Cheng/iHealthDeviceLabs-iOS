@@ -90,8 +90,8 @@
  * @param legXiaobo  Return Wavelet value of ankle BPM, with heartbeats.
  * @param armXiaoboNoHeart  Return Wavelet value of upper-arm BPM, without heartbeats.
  * @param legXiaoboNoHeart  Return Wavelet value of ankle BPM, without heartbeats.
- * @param armResult   Return BP value of upper-arm BPM, including SYS, DIA, heart rate and irregular heartbeat
- * @param legResult  Return BP value of ankle BPM, including SYS, DIA, heart rate and irregular heartbeat.
+ * @param armResult   Return BP value of upper-arm BPM, including time, sys, dia, heartRate, irregular heartbeat.
+ * @param legResult  Return BP value of ankle BPM, including time, sys, dia, heartRate, irregular heartbeat.
  * @param error  Return error codes in BlockError.
  */
 -(void)commandStartMeasureWithUser:(NSString *)userID clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret Authentication:(BlockUserAuthentication)disposeAuthenticationBlock armPressure:(BlockPressure)armPressure legPressure:(BlockPressure)legPressure armXiaoboWithHeart:(BlockXioaboWithHeart)armXiaobo legXiaoboWithHeart:(BlockXioaboWithHeart)legXiaobo armXiaoboNoHeart:(BlockXioaboNoHeart)armXiaoboNoHeart legXiaoboNoHeart:(BlockXioaboNoHeart)legXiaoboNoHeart  armResult:(BlockMesureResult)armResult legResult:(BlockMesureResult)legResult errorBlock:(BlockError)error;
@@ -124,7 +124,7 @@
  * @param armPressure  Return Upper-arm blood pressure value during measurement, unit as mmHg.
  * @param armXiaobo  The Wavelet value of upper-arm BPM, with heartbeats.
  * @param armXiaoboNoHeart  The Wavelet value of upper-arm BPM, without heartbeats.
- * @param armResult  The BP value of upper-arm BPM, including SYS, DIA, heart rate and irregular heartbeat.
+ * @param armResult  The BP value of upper-arm BPM, including time, sys, dia, heartRate, irregular heartbeat.
  * @param error  Error codes in BlockError.
  */
 -(void)commandStartMeasureWithUser:(NSString *)userID clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret Authentication:(BlockUserAuthentication)disposeAuthenticationBlock armPressure:(BlockPressure)armPressure  armXiaoboWithHeart:(BlockXioaboWithHeart)armXiaobo  armXiaoboNoHeart:(BlockXioaboNoHeart)armXiaoboNoHeart armResult:(BlockMesureResult)armResult errorBlock:(BlockError)error;

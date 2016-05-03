@@ -32,6 +32,9 @@
 #define AM4SwimmingAct @"SwimmingAct"
 #define AM4SwimmingPoollength @"swimmingPoollength"
 #define AM4SwimmingCircleCount @"SwimmingCircleCount"
+#define AM4EnterSwimmingTime @"EnterSwimmingTime"
+#define AM4OutSwimmingTime @"OutSwimmingTime"
+#define AM4SwimmingProcessMark @"SwimmingProcessMark"
 
 #define AM4Work_outMeasureDate @"Work_outMeasureDate"
 #define AM4Work_outTimeNumber @"Work_outTimeNumber"
@@ -51,112 +54,74 @@
 
 
 
-//增加查询用户ID;
-typedef void (^DisposeAM4AskUserIDBlock)(unsigned int userID);
-//错误ID
-typedef void (^DisposeAM4ErrorBlock)(AM4ErrorID errorID);
-//随机数
+
+typedef void (^DisposeAM4AskUserIDBlock)(unsigned int userID);//userID
+
+typedef void (^DisposeAM4ErrorBlock)(AM4ErrorID errorID);//Communication error codes, see AM4 error descriptions.
+
 typedef void (^DisposeAM4SetRandomBlock)(BOOL resetSuc);
-//同步时间
-typedef void (^DisposeAM4SyncTimeBlock)(BOOL resetSuc);
 
-//查询区域与时间格式
-typedef void (^DisposeAM4TimeFormatAndNationBlock)(AM4TimeFormatAndNation  timeFormatAndNation);
+typedef void (^DisposeAM4SyncTimeBlock)(BOOL resetSuc);//SyncTime
 
-//设置区域时间格式
-typedef void (^DisposeAM4TimeFormatAndNationSettingBlock)(BOOL timeFormatAndNationSetting);
-//设置用户ID
-typedef void (^DisposeAM4SetUserIDBlock)(BOOL resetSuc);
-//配置个人信息
-typedef void (^DisposeAM4SetUserInfoBlock)(BOOL resetSuc);
+typedef void (^DisposeAM4TimeFormatAndNationBlock)(AM4TimeFormatAndNation  timeFormatAndNation);//dateFormatter
+
+typedef void (^DisposeAM4TimeFormatAndNationSettingBlock)(BOOL timeFormatAndNationSetting);//setdateFormatter
+
+typedef void (^DisposeAM4SetUserIDBlock)(BOOL resetSuc);//set user ID
+
+typedef void (^DisposeAM4SetUserInfoBlock)(BOOL resetSuc);//set user infomation
 
 
+typedef void (^DisposeAM4ActiveStartTransmission)(NSDictionary *startDataDictionary);//Start uploading motion data
+typedef void (^DisposeAM4ActiveHistoryData)(NSArray *historyDataArray);//sportData
+typedef void (^DisposeAM4ActiveFinishTransmission)();//Upload motion complete
 
-//开始传输活动数据
-typedef void (^DisposeAM4ActiveStartTransmission)(NSDictionary *startDataDictionary);
-//运动历史数据
-typedef void (^DisposeAM4ActiveHistoryData)(NSArray *historyDataArray);
-//运动传输结束
-typedef void (^DisposeAM4ActiveFinishTransmission)();
+typedef void (^DisposeAM4SleepStartTransmission)(NSDictionary *startDataDictionary);//Start uploading sleep data
+typedef void (^DisposeAM4SleepHistoryData)(NSArray *historyDataArray);//sleepData
+typedef void (^DisposeAM4SleepFinishTransmission)();//Upload sleep complete
 
-//开始传输睡眠数据
-typedef void (^DisposeAM4SleepStartTransmission)(NSDictionary *startDataDictionary);
-//睡眠历史数据
-typedef void (^DisposeAM4SleepHistoryData)(NSArray *historyDataArray);
-//睡眠传输结束
-typedef void (^DisposeAM4SleepFinishTransmission)();
+typedef void (^DisposeAM4QueryCurrentActiveInfo)(NSDictionary *activeDictionary);//Total calories and steps for today, including parameters：Step、Calories、TotalCalories
 
 
-//增加查询当前运动信息;@"Step",@"Calories"
-typedef void (^DisposeAM4QueryCurrentActiveInfo)(NSDictionary *activeDictionary);
+typedef void (^DisposeAM4ResetDeviceBlock)(BOOL resetSuc);//Restore factory settings.
 
 
+typedef void (^DisposeAM4TotoalAlarmData)(NSMutableArray *totoalAlarmArray);//Alarm array contains up to 3 alarms, each one needs the following parameters：AlarmId、Time、IsRepeat、Switch、（Sun、Mon、Tue、Wed、Thu、Fri、Sat)
 
-//恢复出厂设置是否成功
-typedef void (^DisposeAM4ResetDeviceBlock)(BOOL resetSuc);
+typedef void (^DisposeAM4SetAlarmBlock)(BOOL resetSuc);//set Alarm
 
+typedef void (^DisposeAM4DeleteAlarmBlock)(BOOL resetSuc);//delete Alarm
 
-//总的闹钟信息
-typedef void (^DisposeAM4TotoalAlarmData)(NSMutableArray *totoalAlarmArray);
+typedef void (^DisposeAM4RemindInfoBlock)(NSArray *remindInfo);//remind
 
-//设置闹钟
-typedef void (^DisposeAM4SetAlarmBlock)(BOOL resetSuc);
+typedef void (^DisposeAM4SetReminderBlock)(BOOL resetSuc);// set remind
 
-//删除闹钟
-typedef void (^DisposeAM4DeleteAlarmBlock)(BOOL resetSuc);
+typedef void (^DisposeAM4StateInfoBlock)(AM4QueryState queryState);//query State
 
-//提醒信息
-typedef void (^DisposeAM4RemindAM4InfoBlock)(NSArray *remindInfo);
+typedef void (^DisposeAM4BatteryBlock)(NSNumber *battery);//AM battery percentage, from 0～100.
 
-//设置提醒
-typedef void (^DisposeAM4SetReminderBlock)(BOOL resetSuc);
+typedef void (^DisposeAM4DisconnectBlock)(BOOL resetSuc);//disconnect
 
 
-//查询的状态
-typedef void (^DisposeAM4StateInfoBlock)(AM4QueryState queryState);
+typedef void (^DisposeAM4StepBlock)(NSNumber * normalStepLength, NSNumber *fastStepLength, NSNumber *slowStepLength);//query StepLength
 
-//电池电量
-typedef void (^DisposeAM4BatteryBlock)(NSNumber *battery);
+typedef void (^DisposeAM4SetStepLengthBlock)(BOOL resetSuc);//set StepLength
 
-//断开
-typedef void (^DisposeAM4DisconnectBlock)(BOOL resetSuc);
+typedef void (^DisposeAM4SwimmingBlock)(BOOL swimmingIsOpen, NSNumber * swimmingLaneLength,NSNumber * NOSwimmingTime, AM4SwimmingUnit unit);//query swimming
 
+typedef void (^DisposeAM4SettingSwimmingBlock)(BOOL resetSuc);//set swimming
 
-
-
-//查询歩距
-typedef void (^DisposeAM4StepBlock)(NSNumber * normalStepLength, NSNumber *fastStepLength, NSNumber *slowStepLength);
-//设置步距
-typedef void (^DisposeAM4SetStepLengthBlock)(BOOL resetSuc);
-
-//查询游泳
-typedef void (^DisposeAM4SwimmingBlock)(BOOL swimmingIsOpen, NSNumber * swimmingLaneLength,NSNumber * NOSwimmingTime, AM4SwimmingUnit unit);
-
-//设置游泳
-typedef void (^DisposeAM4SettingSwimmingBlock)(BOOL resetSuc);
-
-//查询功能按钮
-typedef void (^DisposeAM4QueryActiveminituesBlock)(BOOL resetSuc);
-
-//设置功能按钮
+typedef void (^DisposeAM4QueryActiveminituesBlock)(BOOL resetSuc);//Query Activeminitues
 typedef void (^DisposeAM4SettingActiveminituesBlock)(BOOL resetSuc);
 
-//阶段性同步条数
-typedef void (^DisposeAM4SyncSportCountBlock)(NSNumber *sportCount);
-//阶段性测试条数
+typedef void (^DisposeAM4SyncSportCountBlock)(NSNumber *sportCount);//
 typedef void (^DisposeAM4MeasureDataBlock)(NSArray *measureDataArray);
-//阶段性数据结束
 typedef void (^DisposeAM4WorkoutFinishBlock)(BOOL resetSuc);
 
 
-//查询图片
 typedef void (^DisposeAM4PictureBlock)(AM4Picture picture);
-//设置图片
 typedef void (^DisposeAM4SettingPictureBlock)(BOOL resetSuc);
-//设置状态
 typedef void (^DisposeAM4SetStateBlock)(BOOL resetSuc);
-
-//用户信息
 typedef void (^DisposeAM4UserInfoBlock)(NSDictionary *userInfo);
 
 @class User;
@@ -188,7 +153,7 @@ typedef void (^DisposeAM4UserInfoBlock)(NSDictionary *userInfo);
     DisposeAM4DeleteAlarmBlock  _disposeAM4DeleteAlarmBlock;
     
     
-    DisposeAM4RemindAM4InfoBlock _disposeAM4RemindAM4InfoBlock;
+    DisposeAM4RemindInfoBlock _disposeAM4RemindInfoBlock;
     
     DisposeAM4SetReminderBlock _disposeAM4SetReminderBlock;
     
@@ -196,7 +161,6 @@ typedef void (^DisposeAM4UserInfoBlock)(NSDictionary *userInfo);
     DisposeAM4StateInfoBlock _disposeAM4StateInfoBlock;
     DisposeAM4BatteryBlock _disposeAM4BatteryBlock;
     DisposeAM4DisconnectBlock _disposeAM4DisconnectBlock;
-    
     
     DisposeAM4StepBlock _disposeStepBlock;
     DisposeAM4SetStepLengthBlock _disposeAM4SetStepLengthBlock;
@@ -225,26 +189,25 @@ typedef void (^DisposeAM4UserInfoBlock)(NSDictionary *userInfo);
     
     
     NSNumber *_goalNumber;
-    NSMutableArray *_activeDataArray;//存放运动数据
-    NSMutableArray *_sleepDataArray;//存放睡眠数据
-    NSMutableArray *_sleepSectionArray;//存放睡眠等级数据
+    NSMutableArray *_activeDataArray;
+    NSMutableArray *_sleepDataArray;
+    NSMutableArray *_sleepSectionArray;
     
-    NSInteger _AM4ActiveTotoalNum;//运动总条数
-    NSInteger _AM4ActiveTimeInterval;//运动时间偏差
-    BOOL _AM4ActiveStart;//用来标识一批五分钟数据的开始
+    NSInteger _AM4ActiveTotoalNum;
+    NSInteger _AM4ActiveTimeInterval;
+    BOOL _AM4ActiveStart;
     
-    NSInteger _AM4SleepTotoalNum;//睡眠总条数
-    NSInteger _AM4SleepTimeInterval;//睡眠时间偏差
-    uint8_t _AM4SleepCount;//睡眠条数用来有多少段睡眠（数组套数组的格式）
+    NSInteger _AM4SleepTotoalNum;
+    NSInteger _AM4SleepTimeInterval;
+    uint8_t _AM4SleepCount;
     
-    //同步运动数据时计算时间
+   
     uint8_t activeYear;
     uint8_t activeMonth;
     uint8_t activeDay;
     uint8_t activeStepSize;
     
     
-    //同步睡眠数据计算时间
     uint8_t sleepYear;
     uint8_t sleepMonth;
     uint8_t sleepDay;
@@ -253,12 +216,12 @@ typedef void (^DisposeAM4UserInfoBlock)(NSDictionary *userInfo);
     uint8_t sleepSecond;
     
     
-    NSInteger _totoalAlarm;//闹钟总数
-    NSInteger _alarmQueryTime;//查询次数
+    NSInteger _totoalAlarm;
+    NSInteger _alarmQueryTime;
     NSMutableArray *_alarmIDArray;
     NSMutableArray *_alarmDataArray;
     
-    NSMutableArray *_stageMeasureDataArray;//阶段性数据
+    NSMutableArray *_stageMeasureDataArray;
     
     User *_am4User;
     NSString *thirdUserID;
@@ -267,9 +230,14 @@ typedef void (^DisposeAM4UserInfoBlock)(NSDictionary *userInfo);
     NSString *clientSDKSecret;
     BOOL modelVerifyOK;
     
-    
+    NSNumber *_sportCount;//阶段条数
+    NSMutableArray *_amSportArray;
+    NSMutableArray *_amSportSectionArray;
+    NSMutableArray *_amSleepArray;
+    NSMutableArray *_amSleepSectionArray;
+    NSNumber *lastUploadSleepTS;
 }
-@property (retain, nonatomic) NSMutableString *am4RandomString;//随机数
+@property (retain, nonatomic) NSMutableString *am4RandomString;
 @property (retain, nonatomic) NSString *currentUUID;
 @property (retain, nonatomic) NSString *serialNumber;
 @property (retain, nonatomic) NSString *firmwareVersion;
@@ -277,31 +245,144 @@ typedef void (^DisposeAM4UserInfoBlock)(NSDictionary *userInfo);
 @property (copy,   nonatomic) NSString *isInUpdateProcess;
 
 
+
+/**
+ * Establish memory and measurement connection,Only after verification through this interface can we move onto using other API's.
+ * @param tempUser includes properties：clientID，clientSecret，userID.userID，either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email:lvjincan@jiuan.com for more information
+ * @param disposeAuthenticationBlock The return parameters of ’‘userid’, ’clientID’,and ‘clientSecret’ after verification.
+ * The interpretation for the verification:
+ *  1. UserAuthen_RegisterSuccess, New-user registration succeeded.
+ *  2. UserAuthen_LoginSuccess， User login succeeded.
+ *  3. UserAuthen_CombinedSuccess, The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.
+ *  4. UserAuthen_TrySuccess, testing without Internet connection succeeded.
+ *  5. UserAuthen_InvalidateUserInfo, Userid/clientID/clientSecret verification failed.
+ *  6. UserAuthen_SDKInvalidateRight, SDK has not been authorized.
+ *  7. UserAuthen_UserInvalidateRight,User has not been authorized.
+ *  8. UserAuthen_InternetError, Internet error, verification failed.
+ *  --PS:
+ *  The measurement via SDK will be operated in the case of 1-3, and will be terminated if any of 4-8 occurs. The interface needs to be re-called after analyzing the return parameters.
+ *  @Notice  Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection.
+ * @param serialNub Uniquely identifies the user, the SDK requires this to be stored. This ID will be sent to the AM4 and will allow the AM4 to pair with only this user.
+ * @param disposeAskUserID The user ID that is stored on the AM4, 0 indicates that there is no user inf
+ * @param binedSerialnub The user's AM4's MAC Address
+ * @param currentSerialNub The connected user's MAC Address
+ * @param disposeErrorBlock Communication error codes, see AM4 error descriptions.
+ */
 -(void)commandCreateUserManageConnectWithUser:(User *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock currentUserSerialNub:(CurrentSerialNub)serialNub amUser:(DisposeAM4AskUserIDBlock)disposeAskUserID binedAMSerialNub:(DisposeBinedAMSerialNub)binedSerialnub currentSerialNub:(DisposeCurrentSerialNub)currentSerialNub DisposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
 
 
 
-//设置随机数
+
+
+/**
+ * Sending a random number,This API sends a random number to the AM4. Only when the random number matches the number displayed on the AM4 screen can the device be bound to the device.
+ * @param disposeSetRandom True: Sent successfully，False: Failed。Random number is six digits, ranging from 0 – 999999. AM4 will receive the random number and display on screen. The user will have to enter it into the app.
+ * @param disposeErrorBlock see AM4 error descriptions.
+ */
 -(void)commandAM4SetRandomBlock:(DisposeAM4SetRandomBlock)disposeSetRandom disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-//绑定用户
+
+
+/**
+ * Binding AM4 to user,Account binding requires an active internet connection.
+ * @param userID userID
+ * @param tempRandom the 6 random numbers displayed on the AM4。
+ * @param disposeBlock YES: Binding successful, NO: Failed.
+ * @param disposeErrorBlock see AM4 error descriptions.
+ */
 -(void)commandSetAM4UserID:(NSNumber*)userID withRandom:(NSString *)tempRandom DisposeBlock:(DisposeAM4SetUserIDBlock)disposeBlock  DisposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-//BMR 同步时间 时间区域  查询状态信息 电池 设置个人信息
--(void)commandSyncUserInfoWithUser:(User *)tempUser andGoal:(NSNumber*)goalNumber DisposeStateInfo:(DisposeAM4StateInfoBlock)disposeStateInfo DisposeBattery:(DisposeAM4BatteryBlock)disposeBattery DisposeBlock:(DisposeAM4TimeFormatAndNationSettingBlock)disposeBlock DisposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-//设置游泳
+
+
+
+/**
+ * AM4 initialization,Must be called the first time to ensure that the AM4 has correct user information, goals, time, battery checks, etc.
+ * @param tempUser User information, needs to include the following：birthday、height、weight、bmr、sex、lengthUnit.birthday，NSDate.height，(cm).weight，(kg).bmr，user basal metabolic rate.sex，UserSex_Female or UserSex_Male.lengthUnit，total distance，LengthUnit_Mile is imperial units.LengthUnit_Kilometer for metric units.
+ * @param goalNumber User goal number of steps. Default is 10,000
+ * @param disposeStateInfo AM status，State_wrist  (AM4 being worn on the wrist)，State_waist (AM4 worn with belt clip).
+ * @param disposeBattery AM battery percentage, from 0～100.
+ * @param disposeBlock True: Success， False: Failed.
+ * @param disposeErrorBlock see AM4 error descriptions.
+ */
+-(void)commandSyncUserInfoWithUser:(User *)tempUser andGoal:(NSNumber*)goalNumber DisposeStateInfo:(DisposeAM4StateInfoBlock)disposeStateInfo DisposeBattery:(DisposeAM4BatteryBlock)disposeBattery DisposeBlock:(DisposeAM4SetUserInfoBlock)disposeBlock DisposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
+
+
+
+/**
+ * Set Swimming
+ *@param swimmingIsOpen YES:open swimming function NO:close swimming function default:no
+ *@param swimmingPoolLength swimming Pool Length
+ *@param noSwimmingDate automatic drop out swim duration
+ *@param unit swim unit
+ *@param disposeSetSwimming True: Success， False: Failed.
+ *@param disposeErrorBlock see AM4 error descriptions.
+ */
 -(void)commandAM4SetSwimmingState:(BOOL)swimmingIsOpen swimmingPoolLength:(NSNumber *)swimmingPoolLength NOSwimmingTime:(NSDate *)noSwimmingDate unit:(AM4SwimmingUnit)unit resultBlock:(DisposeAM4SettingSwimmingBlock)disposeSetSwimming disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-// 恢复出厂设置
+
+
+
+
+/**
+ * Restore factory settings.
+ * @param disposeResetDevice True: Success， False: Failed.
+ * @param disposeErrorBlock see AM4 error descriptions.
+ */
 -(void)commandAM4ResetDeviceDisposeResultBlock:(DisposeAM4ResetDeviceBlock)disposeResetDevice disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-// 查询总的闹钟信息
+
+
+
+
+/**
+ * Query Alarm
+ * @param disposeTotoalAlarmData Alarm array contains up to 3 alarms, each one needs the following parameters：AlarmId、Time、IsRepeat、Switch、（Sun、Mon、Tue、Wed、Thu、Fri、Sat)AlarmId：1, 2, 3.Time：HH:mm.IsRepeat：Repeat alarm， True: Repeat， False: Don't repeat.Switch：Alarm on/off. True: On, False: Off.Sun、Mon、Tue、Wed、Thu、Fri、Sat：True.
+ * @param disposeErrorBlock see AM4 error descriptions.
+ */
 -(void)commandAM4QueryAlarmInfoDisposeTotoalAlarmData:(DisposeAM4TotoalAlarmData)disposeTotoalAlarmData disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-// 设置闹钟
+
+/**
+ * Set Alarm.
+ * @param alarmDic Alarm information, include parameters：AlarmId、Time、IsRepeat、Switch、（Sun、Mon、Tue、Wed、Thu、Fri、Sat)
+ * @param disposeSetAlarm True: Alarm set successfully，False: Failed.
+ * @param disposeErrorBlock see AM4 error descriptions.
+ */
 -(void)commandAM4SetAlarmWithAlarmDictionary:(NSDictionary *)alarmDic disposeResultBlock:(DisposeAM4SetAlarmBlock)disposeSetAlarm disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-// 删除闹钟
+
+
+
+/**
+ * Delete alarm.
+ * @param alarmID alarmID：1, 2, 3.
+ * @param disposeDeleteAlarm True: Delete successful，False: Failed
+ * @param disposeErrorBlock see AM4 error descriptions.
+ */
 -(void)commandAM4DeleteAlarmID:(NSNumber *)alarmID disposeResultBlock:(DisposeAM4DeleteAlarmBlock)disposeDeleteAlarm disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-// 查询提醒
--(void)commandAM4QueryReminder:(DisposeAM4RemindAM4InfoBlock)disposeRemindInfo disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-// 设置提醒
+
+
+/**
+ * Query reminder.
+ * @param disposeRemindInfo Array containing following parameters：Time、Switch.Time：format HH:mm, time between reminders (HH*60+mm) minutes.Switch：Reminder on/off，True: On， False: Off.
+ * @param disposeErrorBlock see AM4 error descriptions
+ */
+-(void)commandAM4QueryReminder:(DisposeAM4RemindInfoBlock)disposeRemindInfo disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
+
+
+/**
+ * Disconnect Set reminders.
+ * @param reminderDic Array containing collowing parameters：Time、Switch。
+ * @param disposeSetReminder YES: Successfully set, NO: Failed.
+ * @param disposeErrorBlock see AM4 error descriptions
+ */
 -(void)commandAM4SetReminderWithReminderDictionary:(NSDictionary *)reminderDic disposeResultBlock:(DisposeAM4SetReminderBlock)disposeSetReminder disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-// 同步实时数据,运动，睡眠
+
+/**
+ * Upload AM4 data,Data type: 5 minutes of motion data, 5 minutes of sleep data, total number of steps for the day, and total calories. Also includes the number of steps for the 5 minutes of motion data, total calories for the current time, calories of the steps, and total calories. If calculations for every 5 minutes of motion data is required, you will need to calculate the difference between two records.
+ * @param activeTransmission activeTransmission: Start uploading motion data, including parameters：StartActiveHistoryDate、StepSize、StartActiveHistoryTotoalNum.
+ * @param activeHistoryData Start date，yyyy-MM-dd.StepSize：Length of each step, cm.StartActiveHistoryTotoalNum：Number of records.AM4historyData data，including the following parameters：AMDate、AMCalorie、AMStepNum.AMDate：Workout time， NSDate.AMCalorie: Current time total calories.AMStepNum：Total number of steps.
+ * @param activeFinishTransmission Upload complete.
+ * @param sleepTransmission Start uploading sleep data, including parameters：SleepActiveHistoryDate、StartActiveHistoryTotoalNum.SleepActiveHistoryDate：Sleep start time，yyyy-MM-dd HH:mm:ss.StartActiveHistoryTotoalNum: Number of records
+ * @param sleepHistoryData Sleep data, including the following parameters:：AMDate、SleepData.AMDate：Sleep time, NSDate.SleepData: Sleep grade, 0: awake, 1: light sleep, 2: deep sleep.
+ * @param sleepFinishTransmission Upload complete.
+ * @param currentActiveInfo Total calories and steps for today, including parameters：Step、Calories、TotalCalories.Step：Number of steps taken today.Calories：Number of calories burned today.TotalCalories：Sum calories burned and bmr today.
+ * @param disposeErrorBlock see AM4 error descriptions
+ */
 -(void)commandAM4StartSyncActiveData:(DisposeAM4ActiveStartTransmission)activeTransmission
                    activeHistoryData:(DisposeAM4ActiveHistoryData)activeHistoryData
             activeFinishTransmission:(DisposeAM4ActiveFinishTransmission)activeFinishTransmission
@@ -310,11 +391,25 @@ typedef void (^DisposeAM4UserInfoBlock)(NSDictionary *userInfo);
              sleepFinishTransmission:(DisposeAM4SleepFinishTransmission)sleepFinishTransmission
                    currentActiveInfo:(DisposeAM4QueryCurrentActiveInfo)currentActiveInfo
                    disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-//设置状态
--(void)commandAM4SetState:(AM4ActiveState)activeState disposeBlock:(DisposeAM4SetStateBlock)disposeSetState disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
-//阶段性报告数据
+
+
+
+
+
+/**
+ * Upload AM4 report data.
+ * @param disposeSyncSportCount Total report number.
+ * @param disposeMeasureData Report data, including parameters: ReportStage_Swimming、ReportStage_Work_out、ReportStage_Sleep_summary、ReportStage_Activeminute. Currently only supports ReportStage_Work_out、ReportStage_Sleep_summar.Workout contains properties：ReportState、Work_outMeasureDate、Work_outTimeNumber、Work_outStepNumber、Work_outLengthNumber、Work_outCalories.ReportState：ReportStage_Work_out.Work_outMeasureDate：Start time.Work_outTimeNumber：Length of workout (mins).Work_outStepNumber：Workout number of steps.Work_outLengthNumber：Workout distance (km).Work_outCalories：Workout calories burned.Sleep contains properties：ReportState、Sleep_summaryMeasureDate、Sleep_summarySleepTime、Sleep_summarysleepEfficiency、Sleep_summarysleepAddMinute.ReportState：ReportStage_Sleep_summary.Sleep_summaryMeasureDate：Sleep start time.Sleep_summarySleepTime: Sleep duration (mins).Sleep_summarysleepEfficiency：Sleep efficiency percentage, range is 0-100.Sleep_summarysleepAddMinute：Correct sleep duration length. Change the length of time from before falling asleep to add onto the time awake.
+ * @param disposeFinishMeasure YES: Success，NO: Failed.
+ * @param disposeErrorBlock see AM4 error descriptions
+ */
 -(void)commandAM4SetSyncsportCount:(DisposeAM4SyncSportCountBlock)disposeSyncSportCount disposeMeasureData:(DisposeAM4MeasureDataBlock)disposeMeasureData disposeFinishMeasure:(DisposeAM4WorkoutFinishBlock)disposeFinishMeasure disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
 
-//断开连接
+
+/**
+ * Disconnect AM4 connection.
+ * @param disposeBlock  True: Success，False: Failed.
+ * @param disposeErrorBlock see AM4 error descriptions
+ */
 -(void)commandAM4Disconnect:(DisposeAM4DisconnectBlock)disposeDisconnect disposeErrorBlock:(DisposeAM4ErrorBlock)disposeErrorBlock;
 @end

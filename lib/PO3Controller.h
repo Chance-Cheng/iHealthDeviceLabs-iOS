@@ -13,15 +13,26 @@
     NSMutableArray *PO3Array;
 }
 
+/**
+ * Initialize PO3 controller class
+ */
 +(PO3Controller *)shareIHPO3Controller;
 
-//Get all PO3 instance
+
+/**
+ * Access control class instance after receiving PO3ConnectNoti, then use instance to call PO3 related communication methods
+ */
 -(NSArray *)getAllCurrentPO3Instace;
 
-//Restart search PO3
+/**
+ * Restart search PO3
+ */
 -(void)startSearchPO3;
 
-//Stop search PO3
+
+/**
+ * Stop search PO3
+ */
 -(void)stopSearchPO3;
 
 

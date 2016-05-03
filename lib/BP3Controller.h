@@ -18,7 +18,7 @@
 +(BP3Controller *)shareBP3Controller;
 
 /**
- * Get all BP3 instance,Access control class instance after receiving DeviceAuthenSuccess, then use instance to call BP3 related communication methods.
+ * Get all BP3 instance,Access control class instance after receiving BP3ConnectNoti, then use instance to call BP3 related communication methods.
  */
 -(NSArray *)getAllCurrentBP3Instace;
 

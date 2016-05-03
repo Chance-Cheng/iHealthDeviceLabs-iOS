@@ -157,7 +157,7 @@ typedef void (^CurrentSerialNub)(NSInteger serialNub);
     disposeHS5Result: Success:Yes，Fail:No.
     startTransmission: Finish memory transmission.
     progress: Memory transmission progress，0.0～1.0.
-    memorryData: Record data，More details and key refer Measure API. Additionally add time-measure property, related key: date.
+    memorryData: Record data，More details and key refer Measure API. Additionally add time-measure property, related key: date.dataID
     finishTransmission：Finish Memory Transmission
     disposeErrorBlock: error codes in transmission process: Errors in HS5
 */
@@ -172,7 +172,7 @@ typedef void (^CurrentSerialNub)(NSInteger serialNub);
     unStableHS5Weight: Current weight, (kg)
     stableHS5Weight: Stable weight, (kg)
     impedanceWeight: Weight by impedence, (kg)
-    bodyCompositionMeasurements: body info, includes weight(kg), fat content(%), water content(%), muscle content(%), bone mass, visceral fat level, DCI(Kcal). keys: weight, weightFatValue, waterValue, muscleValue, skeletonValue, VFatLevelValue, DCIValue
+    bodyCompositionMeasurements: body info, includes weight(kg), fat content(%), water content(%), muscle content(%), bone mass, visceral fat level, DCI(Kcal). keys: weight, weightFatValue, waterValue, muscleValue, skeletonValue, VFatLevelValue, DCIValue, dataID
     disposeHS5Result: Success:Yes，Fail:No.
     disposeErrorBlock: error codes in transmission process: Errors in HS5
  */

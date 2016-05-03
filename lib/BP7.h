@@ -101,7 +101,7 @@
  *  The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
  *  @Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.
  * @param AngleInfo   Angle information, including angle、isLeftHand. ‘angle’ stands for the inclination angle of the device, from 0 to 180; ‘isLeftHand’ stands for the judgment if the device is on the left hand, ‘true’ means left hand, otherwise is right hand.
- * @param Error： error codes.
+ * @param Error:  error codes.
  * Specification:
  *   1.  BPNormalError:  device error, error message displayed automatically.
  *   2.  BPOverTimeError:   communication over time error.
@@ -117,7 +117,7 @@
  * @param Pressure  Pressure value in the process of measurement, the unit is ‘mmHg’.
  * @param Xiaobo   Wavelet data set including pulse rate.
  * @param xiaoboNoHeart   Wavelet data set without pulse rate.
- * @param Result   result of the measurement, including systolic pressure, diastolic pressure, pulse rate and irregular judgment. Relevant key: SYS, DIA, heartRate, irregular.
+ * @param Result   result of the measurement, including systolic pressure, diastolic pressure, pulse rate and irregular judgment. Relevant key: time, sys, dia, heartRate, irregular.
  * @param error  error codes.
  * Specification:
  *   1.  BPNormalError:  device error, error message displayed automatically.
@@ -133,7 +133,7 @@
  * upload offline data
  * @param totalCount  item quantity of total data.
  * @param progress  upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.
- * @param uploadDataArray 	offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, SYS, DIA, heartRate, irregular.
+ * @param uploadDataArray 	offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, sys, dia, heartRate, irregular.
  * @param error   refer ‘error’ in ‘Establish measurement connection’ in BP.
  */
 -(void)commandBatchUpload:(BlockBachCount)totalCount pregress:(BlockBachProgress)progress dataArray:(BlockBachArray)uploadDataArray errorBlock:(BlockError)error;

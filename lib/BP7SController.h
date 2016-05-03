@@ -18,7 +18,7 @@
 +(BP7SController *)shareBP7SController;
 
 /**
- * Get all BP7S instance,Access control class instance after receiving DeviceAuthenSuccess, then use instance to call BP7S related communication methods.
+ * Get all BP7S instance,Access control class instance after receiving BP7SConnectNoti, then use instance to call BP7S related communication methods.
  */
 -(NSArray *)getAllCurrentBP7SInstace;
 

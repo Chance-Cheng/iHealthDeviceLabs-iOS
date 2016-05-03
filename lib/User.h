@@ -56,6 +56,8 @@ typedef enum{
 //kg
 @property (strong, nonatomic)NSNumber *weight;
 @property (strong, nonatomic)NSNumber *bmr;
+@property (strong, nonatomic)NSNumber *activityLevel;
+
 @property UserIsAthelete isAthlete;
 @property UserSex sex;
 @property LengthUnit lengthUnit;

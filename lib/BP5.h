@@ -31,7 +31,7 @@
  * @param pressure  Pressure value in the process of measurement, the unit is ‘mmHg’.
  * @param xiaobo  Wavelet data set including pulse rate
  * @param xiaoboNoHeart’: Wavelet data set without pulse rate
- * @param result   result of the measurement, including systolic pressure, diastolic pressure, pulse rate and irregular judgment. Relevant key: SYS, DIA, heartRate, irregular
+ * @param result   result of the measurement, including systolic pressure, diastolic pressure, pulse rate and irregular judgment. Relevant key: time, sys, dia, heartRate, irregular
  * @param error   Return error codes.
  * Specification:
  *   1.  BPNormalError:  device error, error message displayed automatically.

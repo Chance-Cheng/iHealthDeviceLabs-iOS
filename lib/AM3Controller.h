@@ -13,19 +13,32 @@
     NSMutableArray *AM3Array;
 }
 
-//Initialize AM3 controller class
+/**
+ * Initialize AM3 controller class
+ */
 +(AM3Controller *)shareIHAM3Controller;
 
-//Access control class instance after receiving AM3ConnectNoti, then use instance to call AM3 related communication methods
+
+/**
+ * Access control class instance after receiving AM3ConnectNoti, then use instance to call AM3 related communication methods
+ */
 -(NSArray *)getAllCurrentAM3Instace;
 
-//If already connected to the correct AM3, can stop connections to any other AM3's with the following API: True: Can connect to AM3's. False: Stop connecting to other AM3's
+
+/**
+ * If already connected to the correct AM3, can stop connections to any other AM3's with the following API: True: Can connect to AM3's. False: Stop connecting to other AM3's
+ */
 -(void)commandCanConnectAM:(BOOL)tempFlag;
 
-//Restart search AM3
+/**
+ * Restart search AM3
+ */
 -(void)startSearchAM3;
 
-//Stop search AM3
+
+/**
+ * Stop search AM3
+ */
 -(void)stopSearchAM3;
 
 
