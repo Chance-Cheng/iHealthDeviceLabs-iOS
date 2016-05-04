@@ -162,7 +162,7 @@ PO3Controller:
 ```NSArray *po3Array = [po3Controller getAllCurrentPO3Instace];```
 
 ```PO3 *po3Instance =[po3Array objectAtIndex:i]```
-d) Use amInstance to call PO3 related communication methods.
+d) Use po3Instance to call PO3 related communication methods.
 ##### 13. Operation procedure for BG1.
 a) Initialization for BG1 (connected BG via soundjack)
 ```AudioBG1Communication *audioBG1Communication=[AudioBG1Communication audioCommunicationObject];```
@@ -171,8 +171,8 @@ PO3Controller:
 ##### 14. Operation procedure for BG5.
 a) Initialization for BG5 (wireless BG viaBluetooth)
 ```BG5Controller *controller=[BG5Controller shareIHBg5Controller];```
-``` BG5 *bg5=[[controller getAllCurrentBG5Instace] objectAtIndex:i];```
-b)  Use amInstance to call bg5 related communication methods.## API Guide
+``` BG5 *bg5Instance=[[controller getAllCurrentBG5Instace] objectAtIndex:i];```
+b)  Use bg5Instance to call bg5 related communication methods.## API Guide
 
 [Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/tree/master/api-docs)
 
