@@ -30,7 +30,7 @@ typedef void (^DisposeSynchronousTimeFinishBlock) (BOOL finishSynchronous);//Syn
     
     DisposePO3Block _disposeBlock;
     DisposePO3ErrorBlock _disposeErrorBlock;
-    DisposePO3Battery _disposeAM3Battery;
+    DisposePO3Battery _disposePO3Battery;
     DisposePO3DataCount _disposePO3DataCount;
     StartPO3Transmission _startPO3Transmission;
     FinishPO3Transmission _finishPO3Transmission;
@@ -54,7 +54,6 @@ typedef void (^DisposeSynchronousTimeFinishBlock) (BOOL finishSynchronous);//Syn
     NSString *_clientSDKUserName;
     NSString *_clientSDKID;
     NSString *_clientSDKSecret;
-    NSDate *_synchronousTime;
 
 }
 @property (retain, nonatomic) NSString *currentUUID;

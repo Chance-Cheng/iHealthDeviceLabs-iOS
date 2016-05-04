@@ -55,7 +55,11 @@ typedef enum{
 @property (nonatomic, strong) NSNumber * height;
 //kg
 @property (strong, nonatomic)NSNumber *weight;
+//invalidate
 @property (strong, nonatomic)NSNumber *bmr;
+//activityLevel=1, Sedentary,spend most of day sitting.
+//activityLevel=2, Active,spend a good part of day doing some physical activity.
+//activityLevel=3, Very Active,spend most of day doing heavy physical activity.
 @property (strong, nonatomic)NSNumber *activityLevel;
 
 @property UserIsAthelete isAthlete;
