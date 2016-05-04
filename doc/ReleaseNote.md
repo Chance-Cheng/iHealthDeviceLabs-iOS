@@ -14,7 +14,7 @@ Release Date: 2016-3-7
 
 ### 3. V1.0.16
 ```
-Description: fix po3 bug
+Description: More function for AM 
 Release Date: 2016-5-3
    a. Add dataID for measure result(BP BG HS AM PO), 
    	  etc: {"weight":60,"dataID":"xxxxxxx"}  
@@ -25,4 +25,9 @@ Release Date: 2016-5-3
    c. Modify calories for AM, etc {Calories = 49,Step = 1213,TotalCalories = 656}  
       Calories is for sport only.  
       TotalCalories sum Calories and bmr.  
+```
+### 4. V1.0.17
+```
+Description: fix po3 measure again bug
+Release Date: 2016-5-4
 ```
