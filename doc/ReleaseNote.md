@@ -42,6 +42,11 @@ Release Date: 2016-5-5
 ```
 Old version：SDK will scan and connect all iHealth Device automatically.
 New version: SDK supply the Api for scan, and Api for connect Separately. 
+
+More info, please read class :
+ScanDeviceController.h
+ConnectDeviceController.h
+
 More details, please read iHealth Demo App
 
 ```
