@@ -16,6 +16,10 @@
     User *currentUser;
 }
 
+- (IBAction)commandTestHS3Pressed:(id)sender;
+- (IBAction)commandTestHS3TurnONPressed:(id)sender;
+- (IBAction)commandTestHS3TurnOFFPressed:(id)sender;
+
 - (IBAction)commandUploadHS4MemoryPressed:(id)sender;
 - (IBAction)commandUploadHS5MemoryPressed:(id)sender;
 - (IBAction)commandDataCloud:(id)sender;

@@ -9,6 +9,7 @@
 #import "HSViewController.h"
 
 #import "HSHeader.h"
+#import "HealthHeader.h"
 
 @interface HSViewController ()
 
@@ -32,6 +33,8 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForHS3:) name:HS3ConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForHS3:) name:HS3DisConnectNoti object:nil];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDiscoverForHS4:) name:HS4Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectFailedForHS4:) name:HS4ConnectFailed object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForHS4:) name:HS4ConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForHS4:) name:HS4DisConnectNoti object:nil];
     
@@ -41,6 +44,9 @@
     [HS4Controller shareIHHs4Controller];
     [HS5Controller shareIHHs5Controller];
     
+    
+    [[ScanDeviceController commandGetInstance] commandScanDeviceType:HealthDeviceType_HS4];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,8 +55,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)commandTestHS3Pressed:(id)sender{
 
--(void)DeviceConnectForHS3:(NSNotification *)tempNoti{
     HS3Controller *hsController = [HS3Controller shareIHHs3Controller];
     NSArray *hsArray = [hsController getAllCurrentHS3Instace];
     
@@ -79,12 +85,83 @@
             NSLog(@"HS3DeviceError:%d",errorID);
         }];
     }
+
+
+
+}
+- (IBAction)commandTestHS3TurnONPressed:(id)sender{
+
+    HS3Controller *hsController = [HS3Controller shareIHHs3Controller];
+    NSArray *hsArray = [hsController getAllCurrentHS3Instace];
+    
+    if(hsArray.count>0){
+        HS3 *hsInstance = [hsArray objectAtIndex:0];
+        User *myUser = [[User alloc]init];
+        myUser.clientID = SDKKey;
+        myUser.clientSecret = SDKSecret;
+        myUser.userID = YourUserName;
+        myUser.height = @180;
+        [hsInstance commandTurnOnBTConnectAutoResult:^(BOOL resetSuc) {
+            
+        } DisposeErrorBlock:^(HS3DeviceError errorID) {
+            
+        }];
+    }
+
+
+}
+- (IBAction)commandTestHS3TurnOFFPressed:(id)sender{
+
+
+    HS3Controller *hsController = [HS3Controller shareIHHs3Controller];
+    NSArray *hsArray = [hsController getAllCurrentHS3Instace];
+    
+    if(hsArray.count>0){
+        HS3 *hsInstance = [hsArray objectAtIndex:0];
+        User *myUser = [[User alloc]init];
+        myUser.clientID = SDKKey;
+        myUser.clientSecret = SDKSecret;
+        myUser.userID = YourUserName;
+        myUser.height = @180;
+        [hsInstance commandTurnOffBTConnectAutoResult:^(BOOL resetSuc) {
+            
+        } DisposeErrorBlock:^(HS3DeviceError errorID) {
+            
+        }];
+    }
+
+
+
+}
+
+
+#pragma mark HS3
+
+-(void)DeviceConnectForHS3:(NSNotification *)tempNoti{
+   
 }
 
 -(void)DeviceDisConnectForHS3:(NSNotification *)tempNoti{
     
     
 }
+
+#pragma mark HS4
+
+-(void)DeviceDiscoverForHS4:(NSNotification *)tempNoti{
+    NSLog(@"DiscoverForHS4:%@",[tempNoti userInfo]);
+    NSDictionary *tempDic = [tempNoti userInfo];
+    NSString *deviceUUID = [tempDic valueForKey:@"ID"];
+    NSString *deviceSerialNub = [tempDic valueForKey:@"SerialNumber"];
+    
+    [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_HS4 andSerialNub:deviceUUID.length?deviceUUID:deviceSerialNub];
+    
+}
+
+-(void)DeviceConnectFailedForHS4:(NSNotification *)tempNoti{
+    NSLog(@"ConnectFailedForHS4:%@",[tempNoti userInfo]);
+}
+
 
 -(void)DeviceConnectForHS4:(NSNotification *)tempNoti{
     HS4Controller *hsController = [HS4Controller shareIHHs4Controller];
@@ -141,6 +218,8 @@
     
     
 }
+
+#pragma mark HS5
 
 -(void)DeviceConnectForHS5:(NSNotification *)tempNoti{
     HS5Controller *hsController = [HS5Controller shareIHHs5Controller];

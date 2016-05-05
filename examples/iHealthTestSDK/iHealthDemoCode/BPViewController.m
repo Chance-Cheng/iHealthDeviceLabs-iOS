@@ -9,6 +9,11 @@
 #import "BPViewController.h"
 #import "BPHeader.h"
 #import "HTSHeader.h"
+#import "HealthHeader.h"
+#import "ConnectDeviceController.h"
+#import "ScanDeviceController.h"
+
+#import "HSHeader.h"
 
 @interface BPViewController ()
 
@@ -35,6 +40,12 @@
     
     self.kd926OfflineDataBtn.hidden= YES;
     self.kd926EnergyBtn.hidden=YES;
+    
+    discoverBP3LDevices=[[NSMutableArray alloc]init];
+    discoverBP7SDevices=[[NSMutableArray alloc]init];
+    discoverKD926Devices=[[NSMutableArray alloc]init];
+    discoverKN550BTDevices=[[NSMutableArray alloc]init];
+    discoverHTSDevices=[[NSMutableArray alloc]init];
     
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForBP3:) name:BP3ConnectNoti object:nil];
@@ -63,11 +74,22 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForArm:) name:ArmConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForArm:) name:ArmDisConnectNoti object:nil];
     
-     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(HTSResultShow:) name:@"HTSResultShow" object:nil];
-     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(HTSBatteryLevelShow:) name:@"batteryLevelShow" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP3LDiscover:) name:BP3LDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP3LConnectFailed:) name:BP3LConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP7SDiscover:) name:BP7SDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP7SConnectFailed:) name:BP7SConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKD926Discover:) name:KD926Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKD926ConnectFailed:) name:KD926ConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKN550BTDiscover:) name:KN550BTDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKN550BTConnectFailed:) name:KN550BTConnectFailed object:nil];
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceHTSDiscover:) name:HTSDiscover object:nil];
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceHTSConnectFailed:) name:HTSConnectFailed object:nil];
     
-    
-     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(HTSBatteryLeve:) name:@"DeviceOpenSession" object:nil];
+//     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(HTSResultShow:) name:@"HTSResultShow" object:nil];
+//     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(HTSBatteryLevelShow:) name:@"batteryLevelShow" object:nil];
+//    
+//    
+//     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(HTSBatteryLeve:) name:@"DeviceOpenSession" object:nil];
     
     [BP3Controller shareBP3Controller];
     
@@ -81,7 +103,8 @@
     [KN550BTController shareKN550BTController];
     [KD926Controller shareKD926Controller];
     
-    
+    [HS3Controller shareIHHs3Controller];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -572,6 +595,140 @@
             _tipTextView.text = [NSString stringWithFormat:@"error:%d",error];
         }];
     }
+}
+- (IBAction)startScanBP3LBotton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BP3L];
+}
+- (IBAction)startConnectBP3LBotton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverBP3LDevices count]>0 ) {
+        NSString *serialNub=[discoverBP3LDevices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_BP3L andSerialNub:serialNub];
+    }
+}
+- (IBAction)startScanBP7SBotton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BP7S];
+}
+- (IBAction)startConnectBP7SBotton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverBP7SDevices count]>0 ) {
+        NSString *serialNub=[discoverBP7SDevices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_BP7S andSerialNub:serialNub];
+    }
+}
+- (IBAction)startScanKD926Botton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KD926];
+}
+- (IBAction)startConnectKD926Botton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverKD926Devices count]>0 ) {
+        NSString *serialNub=[discoverKD926Devices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_KD926 andSerialNub:serialNub];
+    }
+}
+
+- (IBAction)startScanKN550BTBotton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KN550BT];
+}
+- (IBAction)startConnectKN550BTBotton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverKN550BTDevices count]>0 ) {
+        NSString *serialNub=[discoverKN550BTDevices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_KN550BT andSerialNub:serialNub];
+    }
+}
+- (IBAction)startScanHTSBotton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_HTS];
+}
+- (IBAction)startConnectHTSBotton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverHTSDevices count]>0 ) {
+        NSString *serialNub=[discoverHTSDevices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_HTS andSerialNub:serialNub];
+    }
+}
+
+-(void)deviceBP3LDiscover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    [discoverBP3LDevices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverBP3LDevices:%@",_tipTextView.text,discoverBP3LDevices];
+    
+}
+-(void)deviceBP7SDiscover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    if(serialNub==nil)
+    {
+        serialNub = [[info userInfo]valueForKey:@"ID"];
+    }
+    [discoverBP7SDevices addObject:serialNub];
+     _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverBP7SDevices:%@",_tipTextView.text,discoverBP7SDevices];
+    
+}
+-(void)deviceKN550BTDiscover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    if(serialNub==nil)
+    {
+        serialNub = [[info userInfo]valueForKey:@"ID"];
+    }
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    [discoverKN550BTDevices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverKN550BTDevices:%@",_tipTextView.text,discoverKN550BTDevices];
+}
+-(void)deviceKD926Discover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    if(serialNub==nil)
+    {
+        serialNub = [[info userInfo]valueForKey:@"ID"];
+    }
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    [discoverKD926Devices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverKD926Devices:%@",_tipTextView.text,discoverKD926Devices];
+    
+}
+-(void)deviceHTSDiscover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    [discoverHTSDevices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverHTSDevices:%@",_tipTextView.text,discoverHTSDevices];
+}
+
+
+-(void)deviceBP3LConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+}
+-(void)deviceBP7SConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+}
+-(void)deviceKN550BTConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+}
+-(void)deviceKD926ConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+}
+-(void)deviceHTSConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
 }
 
 

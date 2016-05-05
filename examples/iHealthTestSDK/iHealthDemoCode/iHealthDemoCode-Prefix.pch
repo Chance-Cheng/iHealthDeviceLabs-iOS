@@ -16,9 +16,10 @@
 #endif
 
 
-#define DLog 1
 
+#warning ‘SDKKey’ and ‘SDKSecret’ are the only identification for user of SDK, are required registration from iHealth administrator
 #define SDKKey  @""
 #define SDKSecret  @""
-//
+
+#warning ‘YourUserName’, the only identification for the user，by the form of email or cell phone #(cell-phone-# form is not supported temperately)
 #define YourUserName @""

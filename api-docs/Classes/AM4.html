@@ -14,11 +14,11 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">ynote </a>
+				<a href="../index.html">objcdoc </a>
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">youdao</a>
+				<a href="../index.html">zyl910</a>
 			</p>
 			
 		</div>
@@ -74,8 +74,6 @@
 		
 		<option value="//api/name/commandAM4SetReminderWithReminderDictionary:disposeResultBlock:disposeErrorBlock:">- commandAM4SetReminderWithReminderDictionary:disposeResultBlock:disposeErrorBlock:</option>
 		
-		<option value="//api/name/commandAM4SetState:disposeBlock:disposeErrorBlock:">- commandAM4SetState:disposeBlock:disposeErrorBlock:</option>
-		
 		<option value="//api/name/commandAM4SetSwimmingState:swimmingPoolLength:NOSwimmingTime:unit:resultBlock:disposeErrorBlock:">- commandAM4SetSwimmingState:swimmingPoolLength:NOSwimmingTime:unit:resultBlock:disposeErrorBlock:</option>
 		
 		<option value="//api/name/commandAM4SetSyncsportCount:disposeMeasureData:disposeFinishMeasure:disposeErrorBlock:">- commandAM4SetSyncsportCount:disposeMeasureData:disposeFinishMeasure:disposeErrorBlock:</option>
@@ -112,7 +110,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>AM4.h<br />AM4.m</td>
+	<td>AM4.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -382,7 +380,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandSyncUserInfoWithUser:(User *)<em>tempUser</em> andGoal:(NSNumber *)<em>goalNumber</em> DisposeStateInfo:(DisposeAM4StateInfoBlock)<em>disposeStateInfo</em> DisposeBattery:(DisposeAM4BatteryBlock)<em>disposeBattery</em> DisposeBlock:(DisposeAM4TimeFormatAndNationSettingBlock)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM4ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandSyncUserInfoWithUser:(User *)<em>tempUser</em> andGoal:(NSNumber *)<em>goalNumber</em> DisposeStateInfo:(DisposeAM4StateInfoBlock)<em>disposeStateInfo</em> DisposeBattery:(DisposeAM4BatteryBlock)<em>disposeBattery</em> DisposeBlock:(DisposeAM4SetUserInfoBlock)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM4ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
 			
@@ -981,7 +979,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>currentActiveInfo</code></th>
-						<td><p>Total calories and steps for today, including parameters：Step、Calories.Step：Number of steps taken today.Calories：Number of calories burned today.</p></td>
+						<td><p>Total calories and steps for today, including parameters：Step、Calories、TotalCalories.Step：Number of steps taken today.Calories：Number of calories burned today.TotalCalories：Sum calories burned and bmr today.</p></td>
 					</tr>
 				
 					<tr>
@@ -1001,74 +999,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Upload AM4 data,Data type: 5 minutes of motion data, 5 minutes of sleep data, total number of steps for the day, and total calories. Also includes the number of steps for the 5 minutes of motion data, total calories for the current time, calories of the steps, and total calories. If calculations for every 5 minutes of motion data is required, you will need to calculate the difference between two records.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AM4.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandAM4SetState:disposeBlock:disposeErrorBlock:" title="commandAM4SetState:disposeBlock:disposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandAM4SetState:disposeBlock:disposeErrorBlock:">&ndash;&nbsp;commandAM4SetState:disposeBlock:disposeErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Disconnect Set AM4 state.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandAM4SetState:(AM4ActiveState)<em>activeState</em> disposeBlock:(DisposeAM4SetStateBlock)<em>disposeSetState</em> disposeErrorBlock:(DisposeAM4ErrorBlock)<em>disposeErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>activeState</code></th>
-						<td><p>AM4Fly_State: Airplane mode.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeSetState</code></th>
-						<td><p>YES: Successfully set, NO: Failed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM4 error descriptions</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Disconnect Set AM4 state.</p>
 			</div>
 			
 
@@ -1236,7 +1166,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 youdao. All rights reserved. Updated: 2015-12-28</p>
+						<p class="copyright">Copyright &copy; 2016 zyl910. All rights reserved. Updated: 2016-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

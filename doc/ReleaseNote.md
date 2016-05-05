@@ -31,3 +31,17 @@ Release Date: 2016-5-3
 Description: fix po3 measure again bug
 Release Date: 2016-5-4
 ```
+
+
+### 5. V2.0
+```
+Description: Add Scan and Connect function for iHealth device with low energy.
+Release Date: 2016-5-5
+```
+
+```
+Old version：SDK will scan and connect all iHealth Device automatically.
+New version: SDK supply the Api for scan, and Api for connect Separately. 
+More details, please read iHealth Demo App
+
+```

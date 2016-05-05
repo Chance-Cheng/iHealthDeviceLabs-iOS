@@ -26,11 +26,6 @@
 
 
 /**
- * If already connected to the correct AM3, can stop connections to any other AM3's with the following API: True: Can connect to AM3's. False: Stop connecting to other AM3's
- */
--(void)commandCanConnectAM:(BOOL)tempFlag;
-
-/**
  * Restart search AM3
  */
 -(void)startSearchAM3;

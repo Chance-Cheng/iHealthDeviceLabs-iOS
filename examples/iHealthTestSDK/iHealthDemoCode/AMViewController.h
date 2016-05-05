@@ -30,6 +30,8 @@
 - (IBAction)AM3S_ReminderQuery:(id)sender;
 - (IBAction)AM3S_Reset:(id)sender;
 - (IBAction)touchBackgroundPressed:(id)sender;
+- (IBAction)scanDevice:(UIButton *)sender;
 
+- (IBAction)stopScan:(UIButton *)sender;
 
 @end

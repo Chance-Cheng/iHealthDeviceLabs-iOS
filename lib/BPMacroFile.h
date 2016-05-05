@@ -74,13 +74,23 @@ typedef void(^BlockDelPortResult)(BOOL result);
 #define BP7ConnectNoti @"BP7ConnectNoti"
 #define BP7DisConnectNoti @"BP7DisConnectNoti"
 
+#define BP3LDiscover        @"BP3LDiscover"
+#define BP3LConnectFailed   @"BP3LConnectFailed"
 #define BP3LConnectNoti @"BP3LConnectNoti"
 #define BP3LDisConnectNoti @"BP3LDisConnectNoti"
+
+#define BP7SDiscover        @"BP7SDiscover"
+#define BP7SConnectFailed   @"BP7SConnectFailed"
 #define BP7SConnectNoti @"BP7SConnectNoti"
 #define BP7SDisConnectNoti @"BP7SDisConnectNoti"
+
+#define KN550BTDiscover         @"KN550BTDiscover"
+#define KN550BTConnectFailed   @"KN550BTConnectFailed"
 #define KN550BTConnectNoti @"KN550BTConnectNoti"
 #define KN550BTDisConnectNoti @"KN550BTDisConnectNoti"
 
+#define KD926Discover        @"KD926Discover"
+#define KD926ConnectFailed   @"KD926ConnectFailed"
 #define KD926ConnectNoti @"KD926ConnectNoti"
 #define KD926DisConnectNoti @"KD926DisConnectNoti"
 

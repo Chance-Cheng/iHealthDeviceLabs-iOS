@@ -68,8 +68,12 @@ typedef void (^BlockDataFromCloud)(NSArray *dataArray);//the result of userID ve
 
 #define HS3ConnectNoti @"HS3ConnectNoti"
 #define HS3DisConnectNoti @"HS3DisConnectNoti"
-#define HS4ConnectNoti @"HS4ConnectNoti"
+
+#define HS4Discover        @"HS4Discover"
+#define HS4ConnectFailed   @"HS4ConnectFailed"
+#define HS4ConnectNoti    @"HS4ConnectNoti"
 #define HS4DisConnectNoti @"HS4DisConnectNoti"
+
 #define HS5ConnectNoti @"HS5ConnectNoti"
 #define HS5DisConnectNoti @"HS5DisConnectNoti"
 

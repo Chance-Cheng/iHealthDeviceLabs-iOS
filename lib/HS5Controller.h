@@ -20,11 +20,21 @@
 }
 +(HS5Controller *)shareIHHs5Controller;
 
-//Get all scale instance,use hsInstance to call HS related communication methods.
+/*Get all scale instance,use hsInstance to call HS related communication methods.*/
+/*
+ Return Parameters:
+ Instance Array
+ */
 -(NSArray *)getAllCurrentHS5Instace;
 
 //Acquire HS5 data from cloud
 //When connected to the internet, HS5 could upload measurement to cloud to be recorded. Get data in cloud using the below API.
 -(void)getDownloadDataFromCloud:(BlockDataFromCloud )dataBlock;
+
+/*Start search HS5*/
+-(void)commandStartSearchScale;
+
+/*Stop search HS5*/
+-(void)commandStopSearchScale;
 
 @end

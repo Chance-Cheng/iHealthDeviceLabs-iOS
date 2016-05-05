@@ -216,13 +216,18 @@ typedef void (^DisposeQueryBinedSerialNub) (NSString *serialNub);
 #define StartActiveHistoryTotoalNum @"StartActiveHistoryTotoalNum"
 #define StateFlage @"StateFlage"
 
-
+#define AM3Discover        @"AM3Discover"
+#define AM3ConnectFailed   @"AM3ConnectFailed"
 #define AM3ConnectNoti @"AM3ConnectNoti"
 #define AM3DisConnectNoti @"AM3DisConnectNoti"
 
+#define AM3SDiscover        @"AM3SDiscover"
+#define AM3SConnectFailed   @"AM3SConnectFailed"
 #define AM3SConnectNoti @"AM3SConnectNoti"
 #define AM3SDisConnectNoti @"AM3SDisConnectNoti"
 
+#define AM4Discover        @"AM4Discover"
+#define AM4ConnectFailed   @"AM4ConnectFailed"
 #define AM4ConnectNoti @"AM4ConnectNoti"
 #define AM4DisConnectNoti @"AM4DisConnectNoti"
 

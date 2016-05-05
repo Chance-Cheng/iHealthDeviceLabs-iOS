@@ -31,6 +31,8 @@ typedef enum{
 
 typedef void (^BlockUserAuthentication)(UserAuthenResult result);//the result of userID verification
 
+#define PO3Discover       @"PO3Discover"
+#define PO3ConnectFailed   @"PO3ConnectFailed"
 #define PO3ConnectNoti @"PO3ConnectNoti"
 #define PO3DisConnectNoti @"PO3DisConnectNoti"
 

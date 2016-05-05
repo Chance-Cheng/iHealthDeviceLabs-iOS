@@ -9,118 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BGModel/BG5.m"
-            timestampString = "467106501.298913"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1167"
-            endingLineNumber = "1167"
-            landmarkName = "-solveEncodeContent:validDate:remainNum:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BGModel/BG1Comm/BG1.m"
-            timestampString = "467111040.909124"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "847"
-            endingLineNumber = "847"
-            landmarkName = "-solveEncodeContent:validDate:remainNum:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BGModel/BG1Comm/AudioBasicCommunication.m"
-            timestampString = "474192579.058264"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "700"
-            endingLineNumber = "700"
-            landmarkName = "-tranfData"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BGModel/BG1Comm/AudioBasicCommunication.m"
-            timestampString = "474192579.058264"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "664"
-            endingLineNumber = "664"
-            landmarkName = "-tranfData"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BGModel/BG1Comm/AudioBasicCommunication.m"
-            timestampString = "474192579.058264"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "845"
-            endingLineNumber = "845"
-            landmarkName = "-tranfData"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BGModel/BG1Comm/AudioBasicCommunication.m"
-            timestampString = "470036920.409039"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
-            landmarkName = "-commandBG1Connented"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BPModel/ABI.h"
-            timestampString = "472706650.938541"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "@interface ABI"
-            landmarkType = "2">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iHealthDemoCode/BPModel/ZHBPController.m"
             timestampString = "473074528.310902"
             startingColumnNumber = "9223372036854775807"
@@ -138,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iHealthDemoCode/BPModel/BP3L.m"
-            timestampString = "483246841.248687"
+            timestampString = "484048702.51872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "665"
-            endingLineNumber = "665"
+            startingLineNumber = "668"
+            endingLineNumber = "668"
             landmarkName = "-_sessionDataReceived:"
             landmarkType = "5">
          </BreakpointContent>
@@ -153,12 +41,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BPModel/KN550BT.m"
-            timestampString = "483247232.352311"
+            filePath = "iHealthDemoCode/BPModel/BP3L.m"
+            timestampString = "484048764.032424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "929"
+            endingLineNumber = "929"
+            landmarkName = "-commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iHealthDemoCode/BPModel/BP7.m"
+            timestampString = "484051003.132365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "648"
+            endingLineNumber = "648"
+            landmarkName = "-_sessionDataReceived:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iHealthDemoCode/BPModel/BP7S.m"
+            timestampString = "484051512.751245"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "-uploadMemerry:order:from:"
             landmarkType = "5">
          </BreakpointContent>
@@ -169,13 +89,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BPModel/KN550BT.m"
-            timestampString = "483247246.17933"
+            filePath = "iHealthDemoCode/BPModel/BP7S.m"
+            timestampString = "484051597.186221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
-            landmarkName = "-uploadMemerry:order:from:"
+            startingLineNumber = "410"
+            endingLineNumber = "410"
+            landmarkName = "-commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,13 +105,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/HSModel/HS4.m"
-            timestampString = "484035536.051971"
+            filePath = "iHealthDemoCode/BPModel/BP7S.m"
+            timestampString = "484051606.783991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "-commandMeasureWithUint:andUser:Authentication:Weight:StableWeight:DisposeErrorBlock:"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
+            landmarkName = "-commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__120-[BP7S commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:]_block_invoke"
+                  moduleName = "iHealthDemoCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xujianbo/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/BPModel/BP7S.m"
+                  timestampString = "484052178.222417"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "414"
+                  endingLineNumber = "414"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__120-[BP7S commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:]_block_invoke_2"
+                  moduleName = "iHealthDemoCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xujianbo/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/BPModel/BP7S.m"
+                  timestampString = "484052178.222572"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "416"
+                  endingLineNumber = "416"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iHealthDemoCode/BPModel/BP7S.m"
+            timestampString = "484051756.013043"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "833"
+            endingLineNumber = "833"
+            landmarkName = "-startTransferMemoryDataImediant:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iHealthDemoCode/BPModel/BP3L.m"
+            timestampString = "484052017.996084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1017"
+            endingLineNumber = "1017"
+            landmarkName = "-startMeasureImediant:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

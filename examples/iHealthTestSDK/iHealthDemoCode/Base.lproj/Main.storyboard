@@ -16,9 +16,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="aHj-EE-day" kind="relationship" relationship="viewControllers" id="4pI-Kv-6sX"/>
                         <segue destination="Srp-No-WyF" kind="relationship" relationship="viewControllers" id="thx-hD-Vhi"/>
                         <segue destination="TI0-Wo-5FJ" kind="relationship" relationship="viewControllers" id="DZc-Pb-zMi"/>
-                        <segue destination="aHj-EE-day" kind="relationship" relationship="viewControllers" id="4pI-Kv-6sX"/>
                         <segue destination="pBl-fP-NR7" kind="relationship" relationship="viewControllers" id="9bb-V6-zQU"/>
                         <segue destination="kf0-xi-7Zg" kind="relationship" relationship="viewControllers" id="M58-tR-Pf1"/>
                     </connections>
@@ -46,13 +46,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1zy-0c-WgN">
-                                <rect key="frame" x="40" y="49" width="240" height="312"/>
+                                <rect key="frame" x="40" y="49" width="240" height="250"/>
                                 <color key="backgroundColor" white="0.70723083939999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvM-3a-NYu">
-                                <rect key="frame" x="14" y="481" width="151" height="30"/>
+                                <rect key="frame" x="10" y="473" width="151" height="30"/>
                                 <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="BP3L Start Measure">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p4-d5-XLT">
-                                <rect key="frame" x="11" y="382" width="158" height="30"/>
+                                <rect key="frame" x="10" y="435" width="158" height="30"/>
                                 <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="KD926 Get OfflineData">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,13 +72,107 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnS-f6-gZS">
-                                <rect key="frame" x="179" y="382" width="128" height="30"/>
+                                <rect key="frame" x="176" y="435" width="128" height="30"/>
                                 <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="KD926 Get Energy">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="KD926GetEnergy:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="GJc-5x-E6X"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose the devices to start scan:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cko-Ij-qak">
+                                <rect key="frame" x="10" y="307" width="256" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgO-Hd-4z6">
+                                <rect key="frame" x="10" y="336" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="BP3L"/>
+                                <connections>
+                                    <action selector="startScanBP3LBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="AGB-zm-Lly"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xU-X7-qQq">
+                                <rect key="frame" x="72" y="336" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="BP7S"/>
+                                <connections>
+                                    <action selector="startScanBP7SBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="N7U-vU-s4s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aX-jU-LM6">
+                                <rect key="frame" x="129" y="336" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KD926"/>
+                                <connections>
+                                    <action selector="startScanKD926Botton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="2DT-iO-9dC"/>
+                                    <action selector="startScanKN550BTBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="sF2-pO-02V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzM-0c-CuH">
+                                <rect key="frame" x="186" y="336" width="67" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KN550BT"/>
+                                <connections>
+                                    <action selector="startScanKN550BTBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="1Q7-44-MPy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpX-WD-bbe">
+                                <rect key="frame" x="261" y="336" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="HTS"/>
+                                <connections>
+                                    <action selector="startScanHTSBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="npA-Ds-BpB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose the devices to connect:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ji-gg-Yoc">
+                                <rect key="frame" x="10" y="368" width="243" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCe-gI-dYt">
+                                <rect key="frame" x="10" y="397" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="BP3L"/>
+                                <connections>
+                                    <action selector="startConnectBP3LBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="Ace-ye-71w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCi-Ap-MeR">
+                                <rect key="frame" x="72" y="397" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="BP7S"/>
+                                <connections>
+                                    <action selector="startConnectBP7SBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="Ns3-CY-whe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymt-4X-4VZ">
+                                <rect key="frame" x="129" y="397" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KD926"/>
+                                <connections>
+                                    <action selector="startConnectKD926Botton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="mlb-zg-teK"/>
+                                    <action selector="startConnectKN550BTBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="0h1-v5-uI4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmU-NY-oHk">
+                                <rect key="frame" x="186" y="397" width="67" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KN550BT"/>
+                                <connections>
+                                    <action selector="startConnectKN550BTBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="uiE-gI-K2L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BxB-5Q-HGe">
+                                <rect key="frame" x="261" y="397" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="HTS"/>
+                                <connections>
+                                    <action selector="startConnectHTSBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="bEP-Ob-4c4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,6 +184,7 @@
                     <connections>
                         <outlet property="kd926EnergyBtn" destination="CnS-f6-gZS" id="C76-xj-cga"/>
                         <outlet property="kd926OfflineDataBtn" destination="9p4-d5-XLT" id="IcD-Oh-KrK"/>
+                        <outlet property="startScanBP3LBotton" destination="PgO-Hd-4z6" id="9ba-I8-87E"/>
                         <outlet property="tipTextView" destination="1zy-0c-WgN" id="KqF-Jf-pzn"/>
                     </connections>
                 </viewController>
@@ -122,7 +217,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVV-3N-JMw">
-                                <rect key="frame" x="114" y="237" width="92" height="30"/>
+                                <rect key="frame" x="223" y="233" width="92" height="30"/>
                                 <state key="normal" title="HS4-Memory">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -131,7 +226,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L27-aN-aJh">
-                                <rect key="frame" x="114" y="275" width="92" height="30"/>
+                                <rect key="frame" x="219" y="279" width="92" height="30"/>
                                 <state key="normal" title="HS5-Memory">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -140,7 +235,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xok-MD-CBC">
-                                <rect key="frame" x="106" y="306" width="109" height="30"/>
+                                <rect key="frame" x="202" y="310" width="109" height="30"/>
                                 <state key="normal" title="HS5-CloudData">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -167,6 +262,27 @@
                                 <state key="normal" title="HS6Unbind"/>
                                 <connections>
                                     <action selector="unbind:" destination="aHj-EE-day" eventType="touchUpInside" id="Ank-fo-oA3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLI-jv-3j8">
+                                <rect key="frame" x="9" y="233" width="56" height="30"/>
+                                <state key="normal" title="HS3test"/>
+                                <connections>
+                                    <action selector="commandTestHS3Pressed:" destination="aHj-EE-day" eventType="touchUpInside" id="iI8-18-z6D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m17-i4-x1r">
+                                <rect key="frame" x="9" y="279" width="84" height="30"/>
+                                <state key="normal" title="HS3 turnON"/>
+                                <connections>
+                                    <action selector="commandTestHS3TurnONPressed:" destination="aHj-EE-day" eventType="touchUpInside" id="LCW-KT-BX2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQ0-Jv-Yx3">
+                                <rect key="frame" x="9" y="310" width="87" height="30"/>
+                                <state key="normal" title="HS3 turn Off"/>
+                                <connections>
+                                    <action selector="commandTestHS3TurnOFFPressed:" destination="aHj-EE-day" eventType="touchUpInside" id="Gl3-tY-jUX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -201,14 +317,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpD-AK-iDS">
-                                <rect key="frame" x="40" y="355" width="240" height="51"/>
-                                <color key="backgroundColor" white="0.70723083939999998" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyN-Q4-sff">
-                                <rect key="frame" x="30" y="79" width="114" height="70"/>
+                                <rect key="frame" x="26" y="119" width="114" height="41"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.61960784310000006" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Measure">
@@ -220,7 +330,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ca1-jN-fCO">
-                                <rect key="frame" x="160" y="79" width="109" height="70"/>
+                                <rect key="frame" x="163" y="121" width="109" height="37"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.61960784310000006" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Memory">
@@ -232,7 +342,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fq-rq-5An">
-                                <rect key="frame" x="30" y="171" width="100" height="70"/>
+                                <rect key="frame" x="26" y="175" width="100" height="38"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.61960784310000006" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Energy">
@@ -244,7 +354,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9e8-9J-H9C">
-                                <rect key="frame" x="160" y="171" width="100" height="70"/>
+                                <rect key="frame" x="167" y="176" width="100" height="37"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.61960784310000006" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Reset">
@@ -256,7 +366,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZR-3U-bmd">
-                                <rect key="frame" x="30" y="262" width="100" height="70"/>
+                                <rect key="frame" x="26" y="233" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.61960784310000006" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Time">
@@ -268,7 +378,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGC-8y-ehr">
-                                <rect key="frame" x="160" y="262" width="149" height="70"/>
+                                <rect key="frame" x="151" y="232" width="149" height="41"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.61960784310000006" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Disconnect">
@@ -279,8 +389,33 @@
                                     <action selector="ScanPO3:" destination="Srp-No-WyF" eventType="touchUpInside" id="ORj-7Q-3ds"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz2-zj-ixZ">
+                                <rect key="frame" x="26" y="70" width="107" height="34"/>
+                                <color key="backgroundColor" red="0.11805518716573715" green="0.64541321992874146" blue="0.98968738317489624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Scan"/>
+                                <connections>
+                                    <action selector="ScanPO3:" destination="Srp-No-WyF" eventType="touchUpInside" id="CtI-ao-ffH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQ9-jL-XpC">
+                                <rect key="frame" x="163" y="70" width="109" height="34"/>
+                                <color key="backgroundColor" red="0.12176106125116348" green="0.65338236093521118" blue="0.98928970098495483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="ScanPO3:" destination="Srp-No-WyF" eventType="touchUpInside" id="9HK-OW-Au1"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpD-AK-iDS">
+                                <rect key="frame" x="32" y="306" width="240" height="110"/>
+                                <color key="backgroundColor" white="0.70723083939999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="PO" id="wYu-dh-4F2">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
@@ -359,13 +494,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lur-62-mqS">
-                                <rect key="frame" x="41" y="76" width="240" height="77"/>
+                                <rect key="frame" x="40" y="348" width="240" height="77"/>
                                 <color key="backgroundColor" white="0.70723083939999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anc-N5-0VN">
-                                <rect key="frame" x="36" y="161" width="79" height="30"/>
+                                <rect key="frame" x="148" y="131" width="95" height="30"/>
                                 <state key="normal" title="AM3_Clock">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -374,7 +509,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgV-rL-IbF">
-                                <rect key="frame" x="129" y="161" width="106" height="30"/>
+                                <rect key="frame" x="32" y="104" width="106" height="30"/>
                                 <state key="normal" title="AM3_Reminder">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -384,8 +519,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcX-IF-NgA">
-                                <rect key="frame" x="133" y="290" width="89" height="30"/>
-                                <state key="normal" title="AM3S_Clock">
+                                <rect key="frame" x="20" y="297" width="100" height="30"/>
+                                <state key="normal" title="AM3S/4_Clock">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -393,8 +528,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p8-rx-qot">
-                                <rect key="frame" x="133" y="328" width="116" height="30"/>
-                                <state key="normal" title="AM3S_Reminder">
+                                <rect key="frame" x="20" y="259" width="128" height="30"/>
+                                <state key="normal" title="AM3S/4_Reminder">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -402,7 +537,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fef-NG-OPw">
-                                <rect key="frame" x="129" y="192" width="79" height="30"/>
+                                <rect key="frame" x="22" y="131" width="106" height="30"/>
                                 <state key="normal" title="AM3_Reset">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -411,8 +546,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-CU-r6I">
-                                <rect key="frame" x="133" y="366" width="89" height="30"/>
-                                <state key="normal" title="AM3S_Reset">
+                                <rect key="frame" x="148" y="297" width="101" height="30"/>
+                                <state key="normal" title="AM3S/4_Reset">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -420,25 +555,39 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8F-s3-VgV">
-                                <rect key="frame" x="133" y="259" width="114" height="30"/>
-                                <state key="normal" title="AM3SBinedUser">
+                                <rect key="frame" x="164" y="259" width="127" height="30"/>
+                                <state key="normal" title="AM3S/4BinedUser">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="AM3S_BinedUser:" destination="pBl-fP-NR7" eventType="touchUpInside" id="dWo-ZD-zyY"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hmi-TE-nT5">
-                                <rect key="frame" x="26" y="260" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxj-Hz-rle">
-                                <rect key="frame" x="42" y="237" width="65" height="21"/>
+                                <rect key="frame" x="35" y="169" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZg-yx-NT5">
+                                <rect key="frame" x="86" y="49" width="151" height="30"/>
+                                <state key="normal" title="AM3/3S/4ScanDevice"/>
+                                <connections>
+                                    <action selector="scanDevice:" destination="pBl-fP-NR7" eventType="touchUpInside" id="wga-Gr-x7E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-hJ-wOk">
+                                <rect key="frame" x="86" y="87" width="136" height="30"/>
+                                <state key="normal" title="AM3/3S/4StopScan"/>
+                                <connections>
+                                    <action selector="stopScan:" destination="pBl-fP-NR7" eventType="touchUpInside" id="twj-ce-090"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hmi-TE-nT5">
+                                <rect key="frame" x="31" y="227" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>

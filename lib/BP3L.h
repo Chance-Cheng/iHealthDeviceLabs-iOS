@@ -10,16 +10,6 @@
 #import "BPMacroFile.h"
 #import <UIKit/UIKit.h>
 
-typedef enum {
-    BP3LNormalError = 1,//下位机传上来的错误信息
-    BP3LOverTimeError,//底层发的超时
-    BP3LNoRespondError,//一定时间内没收到响应的，一般是蓝牙堵塞
-    BP3LBeyondRangeError,//超范围的
-    BP3LDidDisconnect,//下位机断开
-    //    BP3LAskToShut,//下位机请求关机
-    BP3LAskToStopMeasure//下位机请求中断测量
-    
-}BP3LDeviceError;
 
 typedef void (^BlockEnergyValue)(NSNumber *energyValue);
 typedef void(^BlockError)(BPDeviceError error);

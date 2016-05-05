@@ -11,6 +11,11 @@
 
 @interface BPViewController : UIViewController
 {
+    NSMutableArray *discoverBP3LDevices;
+    NSMutableArray *discoverBP7SDevices;
+    NSMutableArray *discoverKN550BTDevices;
+    NSMutableArray *discoverKD926Devices;
+    NSMutableArray *discoverHTSDevices;
     
 }
 
@@ -19,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *tipTextView;
 @property (strong, nonatomic) IBOutlet UIButton *kd926OfflineDataBtn;
 @property (strong, nonatomic) IBOutlet UIButton *kd926EnergyBtn;
+@property (strong, nonatomic) IBOutlet UIButton *startScanBP3LBotton;
 
 -(IBAction)testBattary:(id)sender;
 

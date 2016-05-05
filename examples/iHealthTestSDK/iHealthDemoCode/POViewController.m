@@ -8,8 +8,12 @@
 
 #import "POViewController.h"
 #import "POHeader.h"
+#import "ScanDeviceController.h"
 
 @interface POViewController ()
+{
+    NSMutableArray *discoverDevices;
+}
 
 @end
 
@@ -30,7 +34,9 @@
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForPO3:) name:PO3ConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForPO3:) name:PO3DisConnectNoti object:nil];
-    [PO3Controller shareIHPO3Controller];
+    discoverDevices=[[NSMutableArray alloc]init];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(devicePO3Discover:) name:PO3Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(devicePO3ConnectFailed:) name:PO3ConnectFailed object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,7 +63,25 @@
 {
     PO3Controller *po3Controller = [PO3Controller shareIHPO3Controller];
     NSArray *po3Array = [po3Controller getAllCurrentPO3Instace];
+    NSLog(@"connected device：%@",[info userInfo]);
+    NSString *connectSeriaNub=[[info userInfo]objectForKey:@"SerialNumber"];
+    NSString *connectID=[[info userInfo]objectForKey:@"ID"];
+    //remove device from discoverDevices
+    for (NSDictionary *discoverDevice in discoverDevices) {
+        NSString *serialNub=[[discoverDevices objectAtIndex:0]objectForKey:@"SerialNumber"];
+        NSString *ID=[[discoverDevices objectAtIndex:0]objectForKey:@"ID"];
+        if (serialNub!=nil&& [serialNub isEqualToString:connectSeriaNub]) {
+            [discoverDevices removeObject:discoverDevice];
+            break;
+        } else if(ID!=nil&& [ID isEqualToString:connectID]){
+            [discoverDevices removeObject:discoverDevice];
+            break;
+
+        }
+    }
     
+    NSLog(@"discoverDevices=%@",discoverDevices);
+
     if(po3Array.count>0)
     {
         PO3 *po3Instance = [po3Array objectAtIndex:0];
@@ -67,11 +91,29 @@
         myUser.clientSecret = SDKSecret;
         myUser.userID = YourUserName;
         
-        NSLog(@"成功=====================");
+        NSLog(@"connected success=====================");
     }
 }
 
+-(void)devicePO3ConnectFailed:(NSNotification*)info {
+    NSLog(@"conncet fail:%@",[info userInfo]);
+    NSString *connectSeriaNub=[[info userInfo]objectForKey:@"SerialNumber"];
+    NSString *connectID=[[info userInfo]objectForKey:@"ID"];
+    for (NSDictionary *discoverDevice in discoverDevices) {
+        NSString *serialNub=[[discoverDevices objectAtIndex:0]objectForKey:@"SerialNumber"];
+        NSString *ID=[[discoverDevices objectAtIndex:0]objectForKey:@"ID"];
+        if (serialNub!=nil&& [serialNub isEqualToString:connectSeriaNub]) {
+            [discoverDevices removeObject:discoverDevice];
+            break;
 
+        } else if(ID!=nil&& [ID isEqualToString:connectID]){
+            [discoverDevices removeObject:discoverDevice];
+            break;
+
+        }
+    }
+    
+}
 
 - (IBAction)ScanPO3:(UIButton*)sender {
     
@@ -92,9 +134,31 @@
     
     switch (sender.tag)
     {
+         case 6:
+            NSLog(@"start scan");
+            [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_PO3];
+          
+            break;
+        case 7:
+            NSLog(@"start connect");
+            if ([discoverDevices count]>0 ) {
+                NSString *serialNub=[[discoverDevices objectAtIndex:0]objectForKey:@"SerialNumber"];
+                NSString *ID=[[discoverDevices objectAtIndex:0]objectForKey:@"ID"];
+             
+                if (serialNub!=nil) {
+                    [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_PO3 andSerialNub:serialNub];
+
+                } else {
+                    [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_PO3 andSerialNub:ID];
+
+                }
+            }
+
+            break;
+            
         case 0:
         {
-            NSLog(@"在线");
+            NSLog(@"online measure");
             [po3Instance commandStartPO3MeasureData:^(BOOL startData) {
                 NSLog(@"startData---%d",startData);
                 
@@ -115,7 +179,7 @@
             break;
         case 1:
         {
-            NSLog(@"离线");
+            NSLog(@"offline ");
             
             [po3Instance commandDisposePO3DataCount:^(NSNumber *dataCount) {
                 NSLog(@"dataCount---%d",[dataCount intValue]);
@@ -144,7 +208,7 @@
             break;
         case 2:
         {
-            NSLog(@"电量");
+            NSLog(@"battery");
             
             [po3Instance commandQueryBatteryInfo:^(BOOL resetSuc) {
                 NSLog(@"resetSuc---%d",resetSuc);
@@ -160,7 +224,7 @@
             break;
         case 3:
         {
-            NSLog(@"出厂");
+            NSLog(@"factory");
             [po3Instance commandResetPO3DeviceDisposeResultBlock:^(BOOL resetSuc) {
                 NSLog(@"resetSuc---%d",resetSuc);
                 
@@ -172,7 +236,7 @@
             break;
         case 4:
         {
-            NSLog(@"时间");
+            NSLog(@"time ");
             [po3Instance commandCreatePO3User:myUser Authentication:^(UserAuthenResult result) {
                 NSLog(@"UserAuthenResult---%d——————",result);
                 
@@ -187,7 +251,7 @@
             break;
         case 5:
         {
-            NSLog(@"断开");
+            NSLog(@"disconnect");
             
             [po3Instance commandEndPO3CurrentConnect:^(BOOL resetSuc) {
                 NSLog(@"resetSuc---%d",resetSuc);
@@ -206,6 +270,20 @@
     
     
 }
+-(void)devicePO3Discover:(NSNotification*)info {
+
+    NSLog(@"Disover:%@",[info userInfo]);
+    for (NSDictionary *discoverDevice in discoverDevices) {
+        if ([[info userInfo] isEqualToDictionary:discoverDevice]) {
+            return;
+        }
+    }
+    [discoverDevices addObject:[info userInfo]];
+
+  
+    
+}
+
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self];
