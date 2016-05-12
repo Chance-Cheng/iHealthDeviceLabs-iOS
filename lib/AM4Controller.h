@@ -26,16 +26,6 @@
  */
 -(NSArray *)getAllCurrentAM4Instace;
 
-/**
- * To specify a specific AM4 device to improve the efficiency of the connection, use the following API. Specify the AM4 unique ID (MAC Address). 
- */
--(void)commandSetYourDeviceID:(NSString *)tempDeviceID;
-
-
-/**
- * If already connected to the correct AM4, can stop connections to any other AM4's with the following API. True: Can connect to AM4's. False: Stop connecting to other AM4's.
- */
--(void)commandCanConnectOtherDevice:(BOOL)tempFlag;
 
 
 /**

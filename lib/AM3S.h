@@ -354,13 +354,6 @@ typedef void (^DisposePictureSetting)(BOOL resetSucSetting);
 
 
 
-/**
- * Disconnect Set AM3s state.
- * @param activeState AM3SFly_State: Airplane mode.
- * @param disposeBlock YES: Success，NO: Failed.
- * @param disposeErrorBlock see section 6 AM3S error descriptions.
- */
--(void)commandSetState:(AM3SActiveState)activeState DisposeBlock:(DisposeAM3SBlock)disposeBlock DisposeErrorBlock:(DisposeAM3SErrorBlock)disposeErrorBlock;
 
 
 

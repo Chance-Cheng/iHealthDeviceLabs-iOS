@@ -24,18 +24,6 @@
  */
 -(NSArray *)getAllCurrentAM3SInstace;
 
-/**
- * To specify a specific AM3s device to improve the efficiency of the connection, use the following API. Specify the AM3s unique ID (MAC Address).
- */
--(void)commandSetYourDeviceID:(NSString *)tempDeviceID;
-
-
-/**
- * If already connected to the correct AM3, can stop connections to any other AM3's with the following API. True: Can connect to AM3s's. False: Stop connecting to other AM3s's.
- */
--(void)commandCanConnectOtherDevice:(BOOL)tempFlag;
-
-
 
 /**
  * Restart search AM3S

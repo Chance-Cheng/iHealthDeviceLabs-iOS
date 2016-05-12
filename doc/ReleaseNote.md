@@ -50,3 +50,10 @@ ConnectDeviceController.h
 More details, please read iHealth Demo App
 
 ```
+
+### 6. V2.0.1
+```
+Description: Add Flow Chart, BG errorID.
+Release Date: 2016-5-12
+```
+

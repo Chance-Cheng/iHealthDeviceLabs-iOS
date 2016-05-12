@@ -1,7 +1,7 @@
 # iHealth Device Developer 
 
 
-###Latest version: 2.0
+###Latest version: 2.0.1
 
 
 ###Documnentation
