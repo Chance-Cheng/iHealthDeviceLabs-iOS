@@ -78,8 +78,6 @@
 		
 		<option value="//api/name/commandSetReminderwithReminderDictionary:DisposeResultBlock:DisposeErrorBlock:">- commandSetReminderwithReminderDictionary:DisposeResultBlock:DisposeErrorBlock:</option>
 		
-		<option value="//api/name/commandSetState:DisposeBlock:DisposeErrorBlock:">- commandSetState:DisposeBlock:DisposeErrorBlock:</option>
-		
 		<option value="//api/name/commandSetSyncsportCount:DisposeMeasureData:disposeFinishMeasure:DisposeErrorBlock:">- commandSetSyncsportCount:DisposeMeasureData:disposeFinishMeasure:DisposeErrorBlock:</option>
 		
 		<option value="//api/name/commandSyncAllAM3SData:DisposeProgress:historyData:FinishTransmission:startsleepdata:DisposeSleepProgress:sleephistoryData:FinishSleepTransmission:CurrentActiveInfo:DisposeErrorBlock:AM3SIsOnTransmission:SleepIsOnTransmission:">- commandSyncAllAM3SData:DisposeProgress:historyData:FinishTransmission:startsleepdata:DisposeSleepProgress:sleephistoryData:FinishSleepTransmission:CurrentActiveInfo:DisposeErrorBlock:AM3SIsOnTransmission:SleepIsOnTransmission:</option>
@@ -162,12 +160,12 @@
 						<td><p>The return parameters of ’‘userid’, ’clientID’,and ‘clientSecret’ after verification.
 The interpretation for the verification:
 1. UserAuthen_RegisterSuccess, New-user registration succeeded.
-2. UserAuthen_LoginSuccess， <a href="../Classes/User.html">User</a> login succeeded.
+2. UserAuthen_LoginSuccess， User login succeeded.
 3. UserAuthen_CombinedSuccess, The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.
 4. UserAuthen_TrySuccess, testing without Internet connection succeeded.
 5. UserAuthen_InvalidateUserInfo, Userid/clientID/clientSecret verification failed.
 6. UserAuthen_SDKInvalidateRight, SDK has not been authorized.
-7. UserAuthen_UserInvalidateRight,<a href="../Classes/User.html">User</a> has not been authorized.
+7. UserAuthen_UserInvalidateRight,User has not been authorized.
 8. UserAuthen_InternetError, Internet error, verification failed.
 &ndash;PS:
 The measurement via SDK will be operated in the case of 1-3, and will be terminated if any of 4-8 occurs. The interface needs to be re-called after analyzing the return parameters.
@@ -390,12 +388,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>tempUser</code></th>
-						<td><p><a href="../Classes/User.html">User</a> information, needs to include the following：birthday、height、weight、bmr、sex、lengthUnit.birthday，NSDate.height，(cm).weight，(kg).bmr，user basal metabolic rate.sex，UserSex_Female or UserSex_Male.lengthUnit，total distance，LengthUnit_Mile is imperial units.LengthUnit_Kilometer for metric units.</p></td>
+						<td><p>User information, needs to include the following：birthday、height、weight、bmr、sex、lengthUnit.birthday，NSDate.height，(cm).weight，(kg).bmr，user basal metabolic rate.sex，UserSex_Female or UserSex_Male.lengthUnit，total distance，LengthUnit_Mile is imperial units.LengthUnit_Kilometer for metric units.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>goalNumber</code></th>
-						<td><p><a href="../Classes/User.html">User</a> goal number of steps. Default is 10,000</p></td>
+						<td><p>User goal number of steps. Default is 10,000</p></td>
 					</tr>
 				
 					<tr>
@@ -953,74 +951,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandSetState:DisposeBlock:DisposeErrorBlock:" title="commandSetState:DisposeBlock:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSetState:DisposeBlock:DisposeErrorBlock:">&ndash;&nbsp;commandSetState:DisposeBlock:DisposeErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Disconnect Set AM3s state.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandSetState:(AM3SActiveState)<em>activeState</em> DisposeBlock:(DisposeAM3SBlock)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3SErrorBlock)<em>disposeErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>activeState</code></th>
-						<td><p>AM3SFly_State: Airplane mode.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
-						<td><p>YES: Success，NO: Failed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see section 6 AM3S error descriptions.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Disconnect Set AM3s state.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AM3S.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/commandSetSyncsportCount:DisposeMeasureData:disposeFinishMeasure:DisposeErrorBlock:" title="commandSetSyncsportCount:DisposeMeasureData:disposeFinishMeasure:DisposeErrorBlock:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/commandSetSyncsportCount:DisposeMeasureData:disposeFinishMeasure:DisposeErrorBlock:">&ndash;&nbsp;commandSetSyncsportCount:DisposeMeasureData:disposeFinishMeasure:DisposeErrorBlock:</a></code>
 </h3>
@@ -1171,7 +1101,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 zyl910. All rights reserved. Updated: 2016-05-05</p>
+						<p class="copyright">Copyright &copy; 2016 zyl910. All rights reserved. Updated: 2016-05-12</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
